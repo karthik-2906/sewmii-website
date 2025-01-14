@@ -1,13 +1,32 @@
 :root {
   --background: #ffffff;
+  /* --background: lightblue; */
   --foreground: #171717;
+  /* --calculator-background: #F6E2E1; */
+  --calculator-background: #B6EAFF;
+  /* --calculator-3d-background: #1F55F5; */
+  --calculator-3d-background: #5E3D84;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Source Sans Light';
+  src: url('/fonts/SourceSans3-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Regular';
+  src: url('/fonts/SourceSans3-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Bold';
+  src: url('/fonts/SourceSans3-SemiBold.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html,
@@ -19,9 +38,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Source Sans Regular';
 }
 
 * {
@@ -35,8 +52,52 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:root:has(.disable-body-scroll) {
+  overflow:hidden;
+}
+
+.MuiSwitch-root {
+  padding: 9px;
+}
+
+.MuiSwitch-root .MuiButtonBase-root {
+  padding: 11px;
+}
+
+.MuiSwitch-root .MuiSwitch-thumb {
+  border-radius: 0;
+  /* color: var(--calculator-background); */
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+
+.MuiSwitch-root .MuiSwitch-track {
+  border-radius: 0;
+  background-color: var(--calculator-3d-background) !important;
+  opacity: 1 !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 0;
+}
+
+.MuiOutlinedInput-input {
+  color: var(--calculator-3d-background);
+  padding: 4px 16px;
+  height: 40px;
+  font-size: 1.25rem;
+}
+
+.MuiSwitch-switchBase:hover {
+  background-color: unset !important;
+  opacity: 1 !important;
+}
+
+.Mui-disabled {
+  -webkit-text-fill-color: var(--calculator-3d-background) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 3px solid var(--calculator-3d-background) !important;
 }
