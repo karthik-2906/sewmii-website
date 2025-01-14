@@ -57,36 +57,36 @@ a {
 }
 
 .MuiSwitch-root {
-  padding: 9px;
+  padding: 9px !important;
 }
 
 .MuiSwitch-root .MuiButtonBase-root {
-  padding: 11px;
+  padding: 11px !important;
 }
 
 .MuiSwitch-root .MuiSwitch-thumb {
-  border-radius: 0;
+  border-radius: 0 !important;
   /* color: var(--calculator-background); */
-  color: white;
-  width: 16px;
-  height: 16px;
+  color: var(--background) !important;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .MuiSwitch-root .MuiSwitch-track {
-  border-radius: 0;
+  border-radius: 0 !important;
   background-color: var(--calculator-3d-background) !important;
   opacity: 1 !important;
 }
 
 .MuiOutlinedInput-root {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .MuiOutlinedInput-input {
-  color: var(--calculator-3d-background);
-  padding: 4px 16px;
-  height: 40px;
-  font-size: 1.25rem;
+  color: var(--calculator-3d-background) !important;
+  padding: 4px 16px !important;
+  height: 40px !important;
+  font-size: 1.25rem !important;
 }
 
 .MuiSwitch-switchBase:hover {
