@@ -49,7 +49,6 @@ export default function TorsoCalculator() {
         { id: 31, hidden: false, label: "Inseam", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 32, hidden: false, label: "Leg Girth", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
         { id: 33, hidden: false, label: "Calf Girth", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
-
     ];
 
     type InputValues = {
@@ -58,7 +57,11 @@ export default function TorsoCalculator() {
 
     const [inputValues, setInputValues] = React.useState<InputValues>(
         calculatorInputs.reduce((acc, input) => {
-            acc[input.id] = "";
+            if (input.id == 26) {
+                acc[input.id] = "0";
+            } else {
+                acc[input.id] = "";
+            }
             return acc;
         }, {} as InputValues)
     );
@@ -108,7 +111,23 @@ export default function TorsoCalculator() {
         });
     };
 
-    const handleInputChange = (id: number, value: string, calcLogic: number ) => {
+    /*
+        Logic for shoe height and Floor length that is hardcoded
+    */
+
+    React.useEffect(() => {
+        const value25 = parseFloat(inputValues[25]) || 0;
+        const value26 = parseFloat(inputValues[26]) || 0;
+
+        const calculatedValue25 = formatValue((value25 + value26).toFixed(2));
+
+        setCalculatedValues((prevValues) => ({
+            ...prevValues,
+            [25]: calculatedValue25,
+        }));
+    }, [inputValues[25], inputValues[26]]);
+
+    const handleInputChange = (id: number, value: string, calcLogic: number) => {
         const regex = isCm
             ? /^\d{0,3}(\.\d{0,2})?$/
             : /^\d{0,2}(\.\d{0,2})?$/;
@@ -124,10 +143,10 @@ export default function TorsoCalculator() {
                     case 2: // No change
                         calculatedValue = formatValue(numericValue.toFixed(2));
                         break;
-                    case 3: // Bust front logic
+                    case 3: // Divided by 2 + 0.5
                         calculatedValue = formatValue(((numericValue / 2) + 0.5).toFixed(2));
                         break;
-                    case 4: // Bust back logic
+                    case 4: // Divided by 2 - 0.5
                         calculatedValue = formatValue(((numericValue / 2) - 0.5).toFixed(2));
                         break;
                     default:
@@ -145,21 +164,18 @@ export default function TorsoCalculator() {
                 calculatorInputs.forEach((input) => {
                     if (input.dependsOn === id) {
                         updatedValues[input.id] = value;
-                        handleInputChange(input.id, updatedValues[input.id], input.calcLogic );
+                        handleInputChange(input.id, updatedValues[input.id], input.calcLogic);
                     }
                 });
 
-                console.log("Updated inputValues:", updatedValues);
                 return updatedValues;
             });
-
             setCalculatedValues((prevValues) => {
                 const newValues = {
                     ...prevValues,
                     [id]: calculatedValue,
                 };
 
-                console.log("Updated calculatedValues:", newValues);
                 return newValues;
             });
         }
@@ -244,9 +260,10 @@ export default function TorsoCalculator() {
                                                 bottom: "8px",
                                                 width: "100%",
                                             }}
+
                                             value={inputValues[inputs.id]}
                                             onChange={(e) =>
-                                                handleInputChange(inputs.id, e.target.value, inputs.calcLogic )
+                                                handleInputChange(inputs.id, e.target.value, inputs.calcLogic)
                                             }
                                             slotProps={{
                                                 input: {
@@ -260,9 +277,15 @@ export default function TorsoCalculator() {
                                     </Box>
                                 </Box>
                                 <IoIosArrowDropright
-                                    style={{ height: "24px", width: "24px", marginTop: "10px" }}
+                                    style={{ height: "24px", width: "24px", marginTop: "10px", visibility: inputs.id == 26 ? "hidden" : "visible" }}
                                 />
-                                <Box component={"div"} width={"40%"}>
+                                <Box
+                                    component={"div"}
+                                    width={"40%"}
+                                    sx={{
+                                        visibility: inputs.id == 26 ? "hidden" : "visible",
+                                    }}
+                                >
                                     <Typography variant="body2" ml={1} fontFamily={"Source Sans Regular"} fontSize={12}>
                                         {inputs.calculatedLabel}
                                     </Typography>
