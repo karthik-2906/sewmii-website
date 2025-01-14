@@ -35,15 +35,14 @@ const productCategories = [
 ];
 
 const socialLinks = [
-    { imgSrc: '/icons/shopee.svg', imgAlt: 'shopee', link: '#' },
+    { imgSrc: '/icons/shopee.svg', imgAlt: 'shopee', link: 'https://shopee.ph/sewmii' },
     { imgSrc: '/icons/instagram.svg', imgAlt: 'instagram', link: '#' },
     { imgSrc: '/icons/youtube.svg', imgAlt: 'youtube', link: '#' },
-    { imgSrc: '/icons/tiktok.svg', imgAlt: 'tiktok', link: '#' },
+    { imgSrc: '/icons/tiktok.svg', imgAlt: 'tiktok', link: 'https://www.tiktok.com/@sewmii.studio' },
 ];
 
 export default function Navbar() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [isSticky, setIsSticky] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -57,7 +56,11 @@ export default function Navbar() {
 
     const toggleDrawer = (open: boolean) => () => {
         setIsDrawerOpen(open);
-        open == true ? document.body.classList.add('disable-body-scroll') : document.body.classList.remove('disable-body-scroll');
+        if (open == true) {
+            document.body.classList.add('disable-body-scroll');
+        } else {
+            document.body.classList.remove('disable-body-scroll');
+        }
     };
 
     const toggleCategory = (category: string) => {
@@ -89,7 +92,6 @@ export default function Navbar() {
             setIsVisible(true);
         }
 
-        setIsSticky(scrollY > 0);
         setLastScrollY(scrollY);
     };
 
@@ -109,7 +111,7 @@ export default function Navbar() {
                 sx={{ width: '100%', py: 0, fontSize: '24px' }}
                 component="nav">
                 <ListItemButton>
-                    <Link href="/" underline='none' color='inherit'>
+                    <Link href="/" underline='none' color='inherit' width='100%'>
                         <ListItemText disableTypography primary="Home" />
                     </Link>
                 </ListItemButton>
@@ -139,7 +141,7 @@ export default function Navbar() {
                 </Collapse>
 
                 <ListItemButton>
-                    <Link href="/calculator" underline='none' color='inherit'>
+                    <Link href="/calculator" underline='none' color='inherit' width='100%'>
                         <ListItemText disableTypography primary="Calculator" />
                     </Link>
                 </ListItemButton>

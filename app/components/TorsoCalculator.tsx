@@ -108,7 +108,7 @@ export default function TorsoCalculator() {
         });
     };
 
-    const handleInputChange = (id: number, value: string, calcLogic: number, dependsOn: number) => {
+    const handleInputChange = (id: number, value: string, calcLogic: number ) => {
         const regex = isCm
             ? /^\d{0,3}(\.\d{0,2})?$/
             : /^\d{0,2}(\.\d{0,2})?$/;
@@ -145,7 +145,7 @@ export default function TorsoCalculator() {
                 calculatorInputs.forEach((input) => {
                     if (input.dependsOn === id) {
                         updatedValues[input.id] = value;
-                        handleInputChange(input.id, updatedValues[input.id], input.calcLogic, input.dependsOn);
+                        handleInputChange(input.id, updatedValues[input.id], input.calcLogic );
                     }
                 });
 
@@ -246,7 +246,7 @@ export default function TorsoCalculator() {
                                             }}
                                             value={inputValues[inputs.id]}
                                             onChange={(e) =>
-                                                handleInputChange(inputs.id, e.target.value, inputs.calcLogic, inputs.dependsOn)
+                                                handleInputChange(inputs.id, e.target.value, inputs.calcLogic )
                                             }
                                             slotProps={{
                                                 input: {
