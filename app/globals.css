@@ -2,10 +2,10 @@
   --background: #ffffff;
   /* --background: lightblue; */
   --foreground: #171717;
-  /* --calculator-background: #F6E2E1; */
-  --calculator-background: #B6EAFF;
-  /* --calculator-3d-background: #1F55F5; */
-  --calculator-3d-background: #5E3D84;
+  /* --calculator-background: #B6EAFF; */
+  --calculator-background: #ffffff;
+  /* --calculator-3d-background: #5E3D84; */
+  --calculator-3d-background: #423f3f;
 }
 
 @font-face {
@@ -53,7 +53,7 @@ a {
 }
 
 :root:has(.disable-body-scroll) {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .MuiSwitch-root {
@@ -100,4 +100,23 @@ a {
 
 .MuiOutlinedInput-notchedOutline {
   border: 3px solid var(--calculator-3d-background) !important;
+}
+
+.MuiTabs-root {
+  min-height: unset !important;
+}
+
+.MuiTabs-scroller .MuiTab-root {
+  min-height: unset !important;
+  padding: 8px 16px !important;
+}
+
+.MuiTabs-indicator {
+  background: var(--calculator-3d-background) !important;
+  display: none !important;
+}
+
+.MuiTabs-scroller .Mui-selected {
+  color: var(--calculator-3d-background) !important;
+  border: 2px dashed var(--calculator-3d-background) !important;
 }

@@ -85,10 +85,11 @@ export default function Navbar() {
 
     const handleScroll = () => {
         const scrollY = window.scrollY;
+        const threshold = 56;
 
-        if (scrollY > lastScrollY) {
+        if (scrollY > threshold && scrollY > lastScrollY) {
             setIsVisible(false);
-        } else {
+        } else if (scrollY < lastScrollY) {
             setIsVisible(true);
         }
 

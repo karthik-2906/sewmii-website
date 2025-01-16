@@ -8,8 +8,8 @@ import Divider from "@mui/material/Divider";
 import Switch from "@mui/material/Switch";
 import { IoIosArrowDropright } from "react-icons/io";
 
-export default function TorsoCalculator() {
-    const calculatorInputs = [
+const calculatorInputs = {
+    torso: [
         { id: 1, hidden: false, label: "Neck", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
         { id: 2, hidden: false, label: "Shoulder", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
         { id: 3, hidden: false, label: "Neck - Shoulder", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: true },
@@ -29,19 +29,25 @@ export default function TorsoCalculator() {
         { id: 14, hidden: false, label: "Waist", calculatedLabel: "Waist Front", calcLogic: 3, dependsOn: 0, divider: false },
         { id: 15, hidden: true, label: "Waist", calculatedLabel: "Waist Back", calcLogic: 4, dependsOn: 14, divider: false },
         { id: 16, hidden: false, label: "Hips", calculatedLabel: "Hips Front", calcLogic: 3, dependsOn: 0, divider: false },
-        { id: 17, hidden: true, label: "Hips", calculatedLabel: "Hips Back", calcLogic: 4, dependsOn: 16, divider: true },
+        { id: 17, hidden: true, label: "Hips", calculatedLabel: "Hips Back", calcLogic: 4, dependsOn: 16, divider: false },
+    ],
 
+    sleeve: [
         { id: 18, hidden: false, label: "Sleeve Length", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 19, hidden: false, label: "Elbow Length", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 20, hidden: false, label: "Cap Height", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 21, hidden: false, label: "Arm Girth", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 22, hidden: false, label: "Elbow Girth", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
-        { id: 23, hidden: false, label: "Wrist Girth", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: true },
+        { id: 23, hidden: false, label: "Wrist Girth", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
+    ],
 
+    skirt: [
         { id: 24, hidden: false, label: "Knee Length", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 25, hidden: false, label: "Floor Length", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
-        { id: 26, hidden: false, label: "Shoe Height", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: true },
+        { id: 26, hidden: false, label: "Shoe Height", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
+    ],
 
+    pant: [
         { id: 27, hidden: false, label: "Crotch", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 28, hidden: false, label: "Pant Waist", calculatedLabel: "Pant Waist Front", calcLogic: 3, dependsOn: 0, divider: false },
         { id: 29, hidden: true, label: "Pant Waist", calculatedLabel: "Pant Waist Back", calcLogic: 4, dependsOn: 28, divider: false },
@@ -49,14 +55,24 @@ export default function TorsoCalculator() {
         { id: 31, hidden: false, label: "Inseam", calculatedLabel: "Calculated", calcLogic: 2, dependsOn: 0, divider: false },
         { id: 32, hidden: false, label: "Leg Girth", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
         { id: 33, hidden: false, label: "Calf Girth", calculatedLabel: "Calculated", calcLogic: 1, dependsOn: 0, divider: false },
-    ];
+    ]
+};
+
+interface CalculatorProps {
+    title: string;
+    height: string;
+    variant: keyof typeof calculatorInputs;
+}
+
+const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
+
 
     type InputValues = {
         [key: number]: string;
     };
 
     const [inputValues, setInputValues] = React.useState<InputValues>(
-        calculatorInputs.reduce((acc, input) => {
+        calculatorInputs[variant].reduce((acc, input) => {
             if (input.id == 26) {
                 acc[input.id] = "0";
             } else {
@@ -67,7 +83,7 @@ export default function TorsoCalculator() {
     );
 
     const [calculatedValues, setCalculatedValues] = React.useState<InputValues>(
-        calculatorInputs.reduce((acc, input) => {
+        calculatorInputs[variant].reduce((acc, input) => {
             acc[input.id] = "";
             return acc;
         }, {} as InputValues)
@@ -161,7 +177,7 @@ export default function TorsoCalculator() {
                     [id]: value,
                 };
 
-                calculatorInputs.forEach((input) => {
+                calculatorInputs[variant].forEach((input) => {
                     if (input.dependsOn === id) {
                         updatedValues[input.id] = value;
                         handleInputChange(input.id, updatedValues[input.id], input.calcLogic);
@@ -186,7 +202,7 @@ export default function TorsoCalculator() {
             component={"div"}
             sx={{
                 backgroundColor: "var(--calculator-3d-background)",
-                height: 3537,
+                height: {height},
                 margin: "48px 32px 32px 16px",
                 position: "relative",
                 maxWidth: 600,
@@ -207,7 +223,7 @@ export default function TorsoCalculator() {
             >
                 <Box component={"div"} display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
                     <Typography variant="h4" sx={{ fontFamily: "Source Sans Bold" }}>
-                        Torso Calculator
+                        {title}
                     </Typography>
                     <Box component={"div"} display={"flex"} alignItems={"center"}>
                         <Typography variant="body2" fontFamily={"Source Sans Bold"}>
@@ -220,7 +236,7 @@ export default function TorsoCalculator() {
                     </Box>
                 </Box>
                 <Box component={"div"} display={"flex"} flexDirection={"column"} gap={2} marginTop={2}>
-                    {calculatorInputs.map((inputs) => (
+                    {calculatorInputs[variant].map((inputs) => (
                         <div key={inputs.id}>
                             <Box
                                 component={"div"}
@@ -323,3 +339,5 @@ export default function TorsoCalculator() {
         </Box>
     );
 }
+
+export default Calculator;
