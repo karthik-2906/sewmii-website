@@ -144,10 +144,10 @@ export default function TorsoCalculator() {
                         calculatedValue = formatValue(numericValue.toFixed(2));
                         break;
                     case 3: // Divided by 2 + 0.5
-                        calculatedValue = formatValue(((numericValue / 2) + 0.5).toFixed(2));
+                        calculatedValue = formatValue(((numericValue / 4) + 0.5).toFixed(2));
                         break;
                     case 4: // Divided by 2 - 0.5
-                        calculatedValue = formatValue(((numericValue / 2) - 0.5).toFixed(2));
+                        calculatedValue = formatValue(((numericValue / 4) - 0.5).toFixed(2));
                         break;
                     default:
                         calculatedValue = formatValue((numericValue).toFixed(2));
