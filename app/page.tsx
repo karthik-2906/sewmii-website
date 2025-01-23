@@ -41,8 +41,8 @@ export default function Home() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
+        // slidesToScroll: 1,
+        // adaptiveHeight: true,
     };
 
     const settingsxl = {
@@ -71,11 +71,13 @@ export default function Home() {
                 </Link>
             </Box>
             {windowWidth > 0 && (
-                <Slider {...settings}>
-                    {testimonialData.map((testimony, index) => (
-                        <TestimonialCard key={index} name={testimony.name} review={testimony.review} />
-                    ))}
-                </Slider>
+                <Box component={'div'} marginBottom={'25px'}>
+                    <Slider {...settings}>
+                        {testimonialData.map((testimony, index) => (
+                            <TestimonialCard key={index} name={testimony.name} review={testimony.review} />
+                        ))}
+                    </Slider>
+                </Box>
             )}
         </Box>
     );
