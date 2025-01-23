@@ -65,8 +65,6 @@ interface CalculatorProps {
 }
 
 const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
-
-
     type InputValues = {
         [key: number]: string;
     };

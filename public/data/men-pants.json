@@ -1,0 +1,24 @@
+[
+    {
+        "id": "men-pants-01",
+        "title": "Men's Pants 1",
+        "desc": "A basic pant pattern for men, available in multiple sizes.",
+        "link": "#",
+        "carouselImages": [
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" }
+        ]
+    },
+    {
+        "id": "men-pants-02",
+        "title": "Men's Pants 2",
+        "desc": "A basic pant pattern for men, designed for comfort and style.",
+        "link": "#",
+        "carouselImages": [
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" }
+        ]
+    }
+]

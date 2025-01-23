@@ -6,8 +6,8 @@ export const metadata: Metadata = {
     title: "sewmii",
     description: "Sewmii pattern studios",
     icons: {
-        icon: "/logos/sewmii-logo-square.png",
-        apple: "/logos/sewmii-logo-square.png", // Optional for Apple devices
+        icon: "/logos/sewmii-logo-square-light.png",
+        apple: "/logos/sewmii-logo-square-light.png",
     },
 };
 

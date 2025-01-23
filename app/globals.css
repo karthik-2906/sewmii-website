@@ -109,6 +109,7 @@ a {
 .MuiTabs-scroller .MuiTab-root {
   min-height: unset !important;
   padding: 8px 16px !important;
+  border: 2px solid var(--background) !important;
 }
 
 .MuiTabs-indicator {
@@ -119,4 +120,22 @@ a {
 .MuiTabs-scroller .Mui-selected {
   color: var(--calculator-3d-background) !important;
   border: 2px dashed var(--calculator-3d-background) !important;
+}
+
+/*
+  Slider styles
+*/
+
+.slick-dots li button:before {
+  content: '' !important;
+  background-color: var(--background);
+  border-radius: 50%;
+  border: 2px solid var(--foreground);
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  background-color: var(--foreground);
 }

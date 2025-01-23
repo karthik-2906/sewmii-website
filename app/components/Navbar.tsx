@@ -15,21 +15,23 @@ import { IoMdMenu, IoMdClose, IoIosAdd, IoIosRemove } from "react-icons/io";
 const productCategories = [
     {
         name: "Men",
+        link: "/products/men",
         products: [
-            { id: 1, name: "Basic Blocks" },
-            { id: 2, name: "Shirts" },
-            { id: 3, name: "Pants" },
+            { id: 1, name: "Basic Blocks", link: "/products/men", query: "basic-blocks" },
+            { id: 2, name: "Shirts", link: "/products/men", query: "shirts" },
+            { id: 3, name: "Pants", link: "/products/men", query: "pants" },
         ]
     },
     {
         name: "Women",
+        link: "#",
         products: [
-            { id: 1, name: "Basic Blocks" },
-            { id: 2, name: "Shirts" },
-            { id: 3, name: "Pants" },
-            { id: 4, name: "Corsets" },
-            { id: 5, name: "Skirts" },
-            { id: 6, name: "Dresses" },
+            { id: 1, name: "Basic Blocks", link: "#", query: "" },
+            { id: 2, name: "Shirts", link: "#", query: "" },
+            { id: 3, name: "Pants", link: "#", query: "" },
+            { id: 4, name: "Corsets", link: "#", query: "" },
+            { id: 5, name: "Skirts", link: "#", query: "" },
+            { id: 6, name: "Dresses", link: "#", query: "" },
         ]
     }
 ];
@@ -70,12 +72,14 @@ export default function Navbar() {
         }));
     };
 
-    const renderSubMenu = (categoryName: string, products: Array<{ id: number, name: string }>) => (
+    const renderSubMenu = (categoryName: string, products: Array<{ id: number, name: string, link: string, query: string }>) => (
         <Collapse in={openCategories[categoryName]} timeout="auto" unmountOnExit>
             <List component="div" sx={{ py: 0 }}>
                 {products.map((product) => (
                     <ListItemButton key={product.id} sx={{ pl: 6 }}>
-                        <ListItemText disableTypography primary={product.name} />
+                        <Link href={`${product.link}?tab=${product.query}`} underline='none' color='inherit' width='100%'>
+                            <ListItemText disableTypography primary={product.name} />
+                        </Link>
                     </ListItemButton>
                 ))}
             </List>
@@ -130,10 +134,12 @@ export default function Navbar() {
 
                 {/*Products Sub-Menu*/}
                 <Collapse in={openCategories.Products} timeout="auto" unmountOnExit>
-                    {productCategories.map(({ name, products }) => (
+                    {productCategories.map(({ name, products, link }) => (
                         <div key={name}>
-                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4 }}>
-                                <ListItemText disableTypography primary={name} />
+                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4, display: 'flex', justifyContent: 'space-between' }}>
+                                <Link href={link} underline='none' color='inherit' onClick={(event) => event.stopPropagation()}>
+                                    <ListItemText disableTypography primary={name} />
+                                </Link>
                                 {openCategories[name] ? <IoIosRemove style={{ height: '32px', width: '32px' }} /> : <IoIosAdd style={{ height: '32px', width: '32px' }} />}
                             </ListItemButton>
                             {renderSubMenu(name, products)}
@@ -179,7 +185,9 @@ export default function Navbar() {
                     </Box>
                 </Box>
             </Drawer >
-            <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
+            <Link href='/'>
+                <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
+            </Link>
         </Box >
     );
 }

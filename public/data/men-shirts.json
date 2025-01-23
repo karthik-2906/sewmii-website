@@ -1,0 +1,24 @@
+[
+    {
+        "id": "men-shirts-01",
+        "title": "Men's Shirts 1",
+        "desc": "A basic shirt pattern for men, available in multiple sizes.",
+        "link": "#",
+        "carouselImages": [
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" }
+        ]
+    },
+    {
+        "id": "men-shirts-02",
+        "title": "Men's Shirts 2",
+        "desc": "A basic shirt pattern for men, designed for comfort and style.",
+        "link": "#",
+        "carouselImages": [
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" },
+            { "src": "/images/sewmii-pattern.jpg", "alt": "temp-alt" }
+        ]
+    }
+]
