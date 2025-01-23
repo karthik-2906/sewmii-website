@@ -49,7 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselIm
                 </Typography>
             </CardContent>
             <CardActions sx={{ padding: '16px 24px 24px', gap: 1 }}>
-                <Link href="#" color="inherit" underline="none" sx={{ padding: '8px 16px', border: '2px dashed var(--foreground)', position: 'relative', display: 'inline-flex', '&:hover .hover-bg': { transform: 'scaleX(1)' }, '&:hover .hover-text': { color: 'var(--background)' } }}>
+                <Link href={link} color="inherit" underline="none" sx={{ padding: '8px 16px', border: '2px dashed var(--foreground)', position: 'relative', display: 'inline-flex', '&:hover .hover-bg': { transform: 'scaleX(1)' }, '&:hover .hover-text': { color: 'var(--background)' } }}>
                     <Typography variant="subtitle2" fontFamily={'Source Sans Regular'} component="p" className="hover-text" sx={{ fontSize: '1rem', zIndex: 1, color: 'var(--foreground)', transition: 'color 0.3s ease' }}>Buy Now</Typography>
                     <Box component="span" className="hover-bg" sx={{ position: 'absolute', inset: 0, backgroundColor: 'var(--foreground)', transform: 'scaleX(0)', transition: 'transform 0.3s ease', transformOrigin: 'left', zIndex: 0 }} />
                 </Link>

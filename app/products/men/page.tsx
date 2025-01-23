@@ -65,7 +65,7 @@ export default function Home() {
     return (
         <Box component="div" marginTop={10}>
             <Typography variant="h5" component="h2" sx={{ fontFamily: "Source Sans Bold", padding: "0 16px" }}>
-                Men's Products
+                Men&apos;s Products
             </Typography>
             <TabContext value={value}>
                 <Tabs
