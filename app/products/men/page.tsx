@@ -23,7 +23,7 @@ type Product = {
     carouselImages: CarouselImage[];
 };
 
-export default function Home() {
+function Home() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const queryTab = searchParams.get("tab");
@@ -63,44 +63,50 @@ export default function Home() {
     }, [queryTab]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Box component="div" marginTop={10}>
-                <Typography variant="h5" component="h2" sx={{ fontFamily: "Source Sans Bold", padding: "0 16px" }}>
-                    Men&apos;s Products
-                </Typography>
-                <TabContext value={value}>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        sx={{ marginTop: 3, padding: "0 16px" }}
-                    >
-                        <Tab label="Basic Blocks" value="basic-blocks" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
-                        <Tab label="Shirts" value="shirts" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
-                        <Tab label="Pants" value="pants" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
-                    </Tabs>
-                    <TabPanel value="basic-blocks" keepMounted={true} sx={{ padding: 0 }}>
-                        <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
-                            {blocksData.map(product => (
-                                <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
-                            ))}
-                        </Box>
-                    </TabPanel>
-                    <TabPanel value="shirts" keepMounted={true} sx={{ padding: 0 }}>
-                        <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
-                            {shirtsData.map(product => (
-                                <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
-                            ))}
-                        </Box>
-                    </TabPanel>
-                    <TabPanel value="pants" keepMounted={true} sx={{ padding: 0 }}>
-                        <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
-                            {pantsData.map(product => (
-                                <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
-                            ))}
-                        </Box>
-                    </TabPanel>
-                </TabContext>
-            </Box>
-        </Suspense>
+        <Box component="div" marginTop={10}>
+            <Typography variant="h5" component="h2" sx={{ fontFamily: "Source Sans Bold", padding: "0 16px" }}>
+                Men&apos;s Products
+            </Typography>
+            <TabContext value={value}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    sx={{ marginTop: 3, padding: "0 16px" }}
+                >
+                    <Tab label="Basic Blocks" value="basic-blocks" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
+                    <Tab label="Shirts" value="shirts" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
+                    <Tab label="Pants" value="pants" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
+                </Tabs>
+                <TabPanel value="basic-blocks" keepMounted={true} sx={{ padding: 0 }}>
+                    <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
+                        {blocksData.map(product => (
+                            <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
+                        ))}
+                    </Box>
+                </TabPanel>
+                <TabPanel value="shirts" keepMounted={true} sx={{ padding: 0 }}>
+                    <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
+                        {shirtsData.map(product => (
+                            <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
+                        ))}
+                    </Box>
+                </TabPanel>
+                <TabPanel value="pants" keepMounted={true} sx={{ padding: 0 }}>
+                    <Box component="div" marginTop={4} display="flex" flexDirection="column" gap={4} padding="0 16px">
+                        {pantsData.map(product => (
+                            <ProductCard key={product.id} title={product.title} desc={product.desc} link={product.link} carouselImages={product.carouselImages} />
+                        ))}
+                    </Box>
+                </TabPanel>
+            </TabContext>
+        </Box>
     );
+}
+
+export default function SuspendedHome() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
+  );
 }
