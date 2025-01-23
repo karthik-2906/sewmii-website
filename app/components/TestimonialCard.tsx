@@ -26,8 +26,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review }) => {
         <Box component={"div"} sx={{ backgroundColor: "var(--calculator-3d-background)", height: height ? `${height}px` : 'auto', margin: "48px 32px 16px 16px", position: "relative", maxWidth: 600 }}>
             <Box component={"div"} ref={innerBoxRef} sx={{ backgroundColor: "var(--calculator-background)", border: "3px solid var(--calculator-3d-background)", width: "100%", position: "absolute", left: "16px", bottom: "16px", padding: 4, display: 'flex', flexDirection: 'column', gap: 2 }}>
                 {quoteIcon}
-                {/* <Typography variant="h6" sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 3, overflow: 'hidden' }}>{review}</Typography> */}
-                <Typography variant="h6" sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)' }}>{review}</Typography>
+                <Typography variant="h6" sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 4, overflow: 'hidden' }}>{review}</Typography>
+                {/* <Typography variant="h6" sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)' }}>{review}</Typography> */}
                 <Typography variant="subtitle1" textAlign={'right'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>- {name}</Typography>
             </Box>
         </Box>
