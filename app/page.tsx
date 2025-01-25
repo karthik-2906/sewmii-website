@@ -13,6 +13,7 @@ import TestimonialCard from "./components/TestimonialCard";
 type Testimonial = {
     name: string;
     review: string;
+    image: string;
 };
 
 export default function Home() {
@@ -41,8 +42,7 @@ export default function Home() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        // slidesToScroll: 1,
-        // adaptiveHeight: true,
+        touchThreshold: 30
     };
 
     const settingsxl = {
@@ -51,8 +51,10 @@ export default function Home() {
         infinite: true,
         centerPadding: "60px",
         slidesToShow: 3,
+        slidesToScroll: 1,
+        swipe: false,
         speed: 500,
-        dots: true,
+        dots: true
     };
 
     const settings = windowWidth < 768 ? settingssm : settingsxl;
@@ -74,7 +76,7 @@ export default function Home() {
                 <Box component={'div'} marginBottom={'25px'}>
                     <Slider {...settings}>
                         {testimonialData.map((testimony, index) => (
-                            <TestimonialCard key={index} name={testimony.name} review={testimony.review} />
+                            <TestimonialCard key={index} name={testimony.name} review={testimony.review} image={testimony.image} />
                         ))}
                     </Slider>
                 </Box>

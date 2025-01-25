@@ -163,7 +163,7 @@ export default function Navbar() {
             top: 0,
             zIndex: 10,
             backgroundColor: 'var(--background)',
-            borderBottom: '1px solid gray',
+            borderBottom: '1px solid #DEDEDE',
             transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
             transition: 'transform 0.3s ease-in-out',
         }}>
