@@ -73,7 +73,7 @@ export default function Home() {
                 </Link>
             </Box>
             {windowWidth > 0 && (
-                <Box component={'div'} marginBottom={'25px'}>
+                <Box component={'div'} paddingBottom={'25px'}>
                     <Slider {...settings}>
                         {testimonialData.map((testimony, index) => (
                             <TestimonialCard key={index} name={testimony.name} review={testimony.review} image={testimony.image} />
