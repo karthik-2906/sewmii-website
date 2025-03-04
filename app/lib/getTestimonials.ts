@@ -1,7 +1,16 @@
+import fs from 'fs/promises';
+import path from 'path';
+
 export async function getTestimonials() {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const dataDir = path.join(process.cwd(), 'public', 'data');
+    const filePath = path.join(dataDir, 'testimonials.json');
 
-    const testimonialsRes = await fetch(`${baseUrl}/data/testimonials.json`).then(testimonialsRes => testimonialsRes.json());
-
-    return testimonialsRes;
+    try {
+        const fileContents = await fs.readFile(filePath, 'utf8');
+        const testimonials = JSON.parse(fileContents);
+        return testimonials;
+    } catch (error) {
+        console.error('Error reading testimonials file:', error);
+        return [];
+    }
 }

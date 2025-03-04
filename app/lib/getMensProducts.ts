@@ -1,15 +1,22 @@
-export async function getMensProducts() {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+import fs from 'fs';
+import path from 'path';
 
-    const [blocksRes, shirtsRes, pantsRes] = await Promise.all([
-        fetch(`${baseUrl}/data/men-basic-blocks.json`).then(res => res.json()),
-        fetch(`${baseUrl}/data/men-shirts.json`).then(res => res.json()),
-        fetch(`${baseUrl}/data/men-pants.json`).then(res => res.json()),
-    ]);
+export async function getMensProducts() {
+    const dataDir = path.join(process.cwd(), 'public', 'data');
+
+    const readJsonFile = (filename: string) => {
+        const filePath = path.join(dataDir, filename);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(fileContents);
+    };
+
+    const blocks = readJsonFile('men-basic-blocks.json');
+    const shirts = readJsonFile('men-shirts.json');
+    const pants = readJsonFile('men-pants.json');
 
     return {
-        blocks: blocksRes,
-        shirts: shirtsRes,
-        pants: pantsRes,
+        blocks,
+        shirts,
+        pants,
     };
 }

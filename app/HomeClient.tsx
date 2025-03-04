@@ -18,8 +18,10 @@ type Testimonial = {
 
 export default function HomeClient({ initialTestimonials }: { initialTestimonials: Testimonial[] }) {
     const [windowWidth, setWindowWidth] = useState<number>(0);
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
+        setIsClient(true);
         setWindowWidth(window.innerWidth);
 
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -35,7 +37,7 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        touchThreshold: 30
+        touchThreshold: 30,
     };
 
     const settingsxl = {
@@ -47,7 +49,7 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
         slidesToScroll: 1,
         swipe: false,
         speed: 500,
-        dots: true
+        dots: true,
     };
 
     const settings = windowWidth < 768 ? settingssm : settingsxl;
@@ -56,16 +58,16 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
         <Box component={'div'}>
             <Box margin={{ margin: '96px 16px 0', lg: '96px auto 0' }} maxWidth="1248px">
                 <Typography variant="h2" fontFamily={'Source Sans Bold'}>Under Development</Typography>
-                <Link href="https://shopee.ph/sewmii" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4} >
+                <Link href="https://shopee.ph/sewmii" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4}>
                     <Image src={"/icons/shopee.svg"} alt={'Shopee logo'} height={32} width={32} style={{ display: 'block' }} />
                     <Typography variant="h5" fontFamily={'Source Sans Regular'}>Shopee</Typography>
                 </Link>
-                <Link href="https://www.tiktok.com/@sewmii.studio" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4} >
-                    <Image src={"/icons/tiktok.svg"} alt={'Shopee logo'} height={32} width={32} style={{ display: 'block' }} />
+                <Link href="https://www.tiktok.com/@sewmii.studio" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4}>
+                    <Image src={"/icons/tiktok.svg"} alt={'Tiktok logo'} height={32} width={32} style={{ display: 'block' }} />
                     <Typography variant="h5" fontFamily={'Source Sans Regular'}>Tiktok</Typography>
                 </Link>
             </Box>
-            {windowWidth > 0 && (
+            {isClient && windowWidth > 0 && (
                 <Box component={'div'} paddingBottom={'25px'} marginTop={'16px'}>
                     <Slider {...settings}>
                         {initialTestimonials.map((testimony, index) => (
