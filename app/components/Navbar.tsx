@@ -158,7 +158,7 @@ export default function Navbar() {
     );
 
     return (
-        <Box component={'header'} display={'flex'} justifyContent={'space-between'} p={2} alignItems={'center'} sx={{
+        <Box component={'header'} sx={{
             position: 'fixed',
             width: '100%',
             top: 0,
@@ -168,27 +168,32 @@ export default function Navbar() {
             transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
             transition: 'transform 0.3s ease-in-out',
         }}>
-            <IoMdMenu onClick={toggleDrawer(true)} style={{ height: '24px', width: '24px' }} />
-            <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} PaperProps={{
-                sx: {
-                    backgroundColor: 'var(--background)',
-                },
+            <Box component={'div'} display={'flex'} justifyContent={'space-between'} p={{ padding: '16px', lg: '16px 0' }} alignItems={'center'} sx={{
+                maxWidth: '1248px',
+                margin: '0 auto'
             }}>
-                {list()}
-                <Box component={'div'} position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)' }}>
-                    <Divider />
-                    <Box component={'div'} display={'flex'} padding={2} gap={2}>
-                        {socialLinks.map((socialLink, index) => (
-                            <Link key={index} href={socialLink.link}>
-                                <Image src={socialLink.imgSrc} alt={socialLink.imgAlt} height={24} width={24} style={{ display: 'block' }} />
-                            </Link>
-                        ))}
+                <IoMdMenu onClick={toggleDrawer(true)} style={{ height: '24px', width: '24px' }} />
+                <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} PaperProps={{
+                    sx: {
+                        backgroundColor: 'var(--background)',
+                    },
+                }}>
+                    {list()}
+                    <Box component={'div'} position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)' }}>
+                        <Divider />
+                        <Box component={'div'} display={'flex'} padding={2} gap={2}>
+                            {socialLinks.map((socialLink, index) => (
+                                <Link key={index} href={socialLink.link}>
+                                    <Image src={socialLink.imgSrc} alt={socialLink.imgAlt} height={24} width={24} style={{ display: 'block' }} />
+                                </Link>
+                            ))}
+                        </Box>
                     </Box>
-                </Box>
-            </Drawer >
-            <Link href='/'>
-                <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
-            </Link>
+                </Drawer >
+                <Link href='/'>
+                    <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
+                </Link>
+            </Box>
         </Box >
     );
 }

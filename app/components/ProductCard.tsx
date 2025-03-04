@@ -32,8 +32,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselIm
     };
 
     return (
-        <Card sx={{ width: '100%', borderRadius: 0, boxShadow: '0 4px 40px rgba(34,59,149,.08)' }}>
-            {carouselImages.length>0? <Box component={'div'} className="slider-container" marginBottom={3}>
+        <Card sx={{ width: { width: '100%', sm: 'calc(50% - 8px)' }, borderRadius: 0, boxShadow: '0 4px 40px rgba(34,59,149,.08)' }}>
+            {carouselImages.length > 0 ? <Box component={'div'} className="slider-container" marginBottom={3}>
                 <Slider {...settings}>
                     {carouselImages.map((images, index) => (
                         <Image key={index} src={images.src} alt={images.alt} height={400} width={400} style={{ width: '100%', height: 'auto' }} />
