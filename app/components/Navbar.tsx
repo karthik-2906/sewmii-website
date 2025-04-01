@@ -130,11 +130,6 @@ export default function Navbar() {
                         <ListItemText disableTypography primary="Home" />
                     </Link>
                 </ListItemButton>
-                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
-                    <Link href="#" underline='none' color='inherit'>
-                        <ListItemText disableTypography primary="About Us" />
-                    </Link>
-                </ListItemButton>
 
                 {/*Products Menu */}
                 <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }} onClick={() => toggleCategory('Products')}>
@@ -160,6 +155,11 @@ export default function Navbar() {
                 <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
                     <Link href="/calculator" underline='none' color='inherit' width='100%'>
                         <ListItemText disableTypography primary="Calculator" />
+                    </Link>
+                </ListItemButton>
+                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
+                    <Link href="/" underline='none' color='inherit' width='100%'>
+                        <ListItemText disableTypography primary="Services" />
                     </Link>
                 </ListItemButton>
             </List>
