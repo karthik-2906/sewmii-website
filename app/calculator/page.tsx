@@ -17,7 +17,7 @@ export default function Home() {
     };
 
     return (
-        <Box sx={{ marginTop: '80px' }}>
+        <Box margin={{ margin: '96px 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
             <TabContext value={value}>
                 <Tabs
                     value={value}

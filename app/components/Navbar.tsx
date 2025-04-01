@@ -11,6 +11,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import { IoMdMenu, IoMdClose, IoIosAdd, IoIosRemove } from "react-icons/io";
+import Typography from '@mui/material/Typography';
+import { IoIosArrowDown } from "react-icons/io";
 
 const productCategories = [
     {
@@ -44,10 +46,17 @@ const socialLinks = [
     { imgSrc: '/icons/mail.svg', imgAlt: 'tiktok', link: 'mailto:sewmiiofficial@gmail.com' },
 ];
 
+const shopLogo = <svg height='24px' width='24px' viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M8.25013 6.01489C8.25003 6.00994 8.24998 6.00498 8.24998 6V5C8.24998 2.92893 9.92892 1.25 12 1.25C14.0711 1.25 15.75 2.92893 15.75 5V6C15.75 6.00498 15.7499 6.00994 15.7498 6.01489C17.0371 6.05353 17.8248 6.1924 18.4261 6.69147C19.2593 7.38295 19.4787 8.55339 19.9177 10.8943L20.6677 14.8943C21.2849 18.186 21.5934 19.8318 20.6937 20.9159C19.794 22 18.1195 22 14.7704 22H9.22954C5.88048 22 4.20595 22 3.30624 20.9159C2.40652 19.8318 2.71512 18.186 3.33231 14.8943L4.08231 10.8943C4.52122 8.55339 4.74068 7.38295 5.57386 6.69147C6.17521 6.1924 6.96287 6.05353 8.25013 6.01489ZM9.74998 5C9.74998 3.75736 10.7573 2.75 12 2.75C13.2426 2.75 14.25 3.75736 14.25 5V6C14.25 5.99999 14.25 6.00001 14.25 6C14.1747 5.99998 14.0982 6 14.0204 6H9.97954C9.90176 6 9.82525 6 9.74998 6.00002C9.74998 6.00002 9.74998 6.00003 9.74998 6.00002V5Z" fill="#404040"></path> </g></svg>
+
 export default function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
+
+    const toggleDesktopMenu = () => {
+        setIsMenuOpen(prev => !prev);
+    };
 
     const [openCategories, setOpenCategories] = useState<{
         [key: string]: boolean;
@@ -168,7 +177,34 @@ export default function Navbar() {
             transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
             transition: 'transform 0.3s ease-in-out',
         }}>
+
             {/* Header desktop */}
+            <Box component={'div'} display={{ display: 'none', md: 'flex' }} justifyContent={'space-between'} p='24px 0' alignItems={'center'} maxWidth={'1248px'} margin={{ margin: '0 16px', lg: '0 auto' }}>
+                <Link href='/'>
+                    <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
+                </Link>
+                <Box component={'div'} display={'flex'} gap={0} alignItems={'center'}>
+                    <Link href="/" underline="none" color="black" fontSize="16px" p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0' } }}>Home</Link>
+                    <Box component={'div'} display={'flex'} gap={'4px'} alignItems={'center'} fontFamily={'Source Sans Regular'} p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0', cursor: 'pointer' } }}
+                        onClick={toggleDesktopMenu}
+                    >
+                        <Typography variant='h6' fontFamily={'Source Sans Regular'} fontSize={'16px'}>Products</Typography>
+                        <IoIosArrowDown style={{
+                            transform: isMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease'
+                        }} />
+                    </Box>
+                    <Link href="/calculator" underline="none" color="black" fontSize="16px" p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0' } }}>Calculator</Link>
+                    <Link href="/" underline="none" color="black" fontSize="16px" p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0' } }}>Services</Link>
+                </Box>
+                <Link target='_blank' href="https://shopee.ph/sewmii" underline="none" display="flex" alignItems="center" gap="4px" padding="8px 32px" borderRadius={1} sx={{ backgroundColor: "#e8e8e8", transition: "all 0.3s ease", "&:hover": { "& .button-content": { transform: "scale(0.95)" } } }}>
+                    <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px", transition: "transform 0.3s ease" }}>
+                        {shopLogo}
+                        <Typography variant="h6" color="black" fontSize="12px" fontFamily={'Source Sans Regular'}>
+                            Buy Now
+                        </Typography>
+                    </span>
+                </Link>
+            </Box>
 
             {/* Header mobile */}
             <Box component={'div'} display={{ display: 'flex', md: 'none' }} justifyContent={'space-between'} p='16px' alignItems={'center'}>
@@ -194,6 +230,6 @@ export default function Navbar() {
                     <Image src="/logos/sewmii-logo-text.png" alt='temp' height={24} width={631} style={{ height: '24px', width: 'auto' }}></Image>
                 </Link>
             </Box>
-        </Box >
+        </Box>
     );
 }

@@ -34,7 +34,7 @@ export default function Footer() {
                 <Box component={'div'} display={'flex'} gap={1} justifyContent={'center'}>
                     <Link href='/' underline={'none'} sx={{ color: 'gray' }}>Home</Link>
                     <Typography variant="subtitle2" lineHeight={'unset'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>|</Typography>
-                    <Link href='/' underline={'none'} sx={{ color: 'gray' }}>Contact</Link>
+                    <Link href='mailto:sewmiiofficial@gmail.com' underline={'none'} sx={{ color: 'gray' }}>Contact</Link>
                     <Typography variant="subtitle2" lineHeight={'unset'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>|</Typography>
                     <Link href='/' underline={'none'} sx={{ color: 'gray' }}>Browse</Link>
                 </Box>

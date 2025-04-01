@@ -43,7 +43,7 @@ export default function HomeClient({
     };
 
     return (
-        <Box component="div" maxWidth={"1248px"} margin={"96px auto 0"} p={{ padding: "0 16px", lg: "0" }}>
+        <Box component="div" maxWidth={"1248px"} margin={{ margin: '96px 16px 0', md: '120px 16px 0', lg: '120px auto 0' }}>
             <Typography variant="h5" component="h2" fontFamily={"Source Sans Bold"} fontSize={"2rem"}>
                 Men&apos;s Products
             </Typography>

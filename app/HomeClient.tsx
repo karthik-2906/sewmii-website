@@ -40,23 +40,35 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
         touchThreshold: 30,
     };
 
-    const settingsxl = {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "60px",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        swipe: false,
-        speed: 500,
+    const settingslg = {
         dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        touchThreshold: 30,
     };
 
-    const settings = windowWidth < 768 ? settingssm : settingsxl;
+    const settingsxl = {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        arrows: true,
+        swipe: false
+    };
+
+    let settings;
+
+    if (windowWidth >= 900) {
+        settings = settingsxl;
+    } else if (windowWidth < 900 && windowWidth >= 600) {
+        settings = settingslg;
+    } else settings = settingssm;
 
     return (
         <Box component={'div'}>
-            <Box margin={{ margin: '96px 16px 0', lg: '96px auto 0' }} maxWidth="1248px">
+            <Box margin={{ margin: '96px 16px 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
                 <Typography variant="h2" fontFamily={'Source Sans Bold'}>Under Development</Typography>
                 <Link href="https://shopee.ph/sewmii" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4}>
                     <Image src={"/icons/shopee.svg"} alt={'Shopee logo'} height={32} width={32} style={{ display: 'block' }} />
@@ -68,7 +80,7 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
                 </Link>
             </Box>
             {isClient && windowWidth > 0 && (
-                <Box component={'div'} paddingBottom={'25px'} marginTop={'16px'}>
+                <Box component={'div'} paddingBottom={'25px'} marginTop={'16px'} maxWidth={'1248px'} margin={{ margin: '0 0 0 16px', lg: '0 auto' }}>
                     <Slider {...settings}>
                         {initialTestimonials.map((testimony, index) => (
                             <TestimonialCard key={index} name={testimony.name} review={testimony.review} image={testimony.image} />
