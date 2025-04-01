@@ -34,7 +34,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
 
     return (
         <>
-            <Box component={"div"} margin={'48px 32px 32px 0' } sx={{ backgroundColor: "var(--calculator-3d-background)", height: { xs: '336px', sm: '304px' }, position: "relative", maxWidth: 600 }}>
+            <Box component={"div"} margin={{ margin: '48px 32px 32px 16px', sm: '48px 32px 32px 0' }} sx={{ backgroundColor: "var(--calculator-3d-background)", height: { xs: '336px', sm: '304px' }, position: "relative", maxWidth: 600 }}>
                 <Box component={"div"} onClick={handleOpenOverlay} sx={{ backgroundColor: "var(--calculator-background)", border: "3px solid var(--calculator-3d-background)", width: "100%", height: { xs: '336px', sm: '304px' }, position: "absolute", left: "16px", bottom: "16px", padding: 4, display: 'flex', flexDirection: 'column', cursor: 'pointer' }}>
                     {quoteIcon}
                     <Typography variant="h6" margin={'16px 0'} sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: { xs: 5, sm: 4 }, overflow: 'hidden' }}>{review}</Typography>

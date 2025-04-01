@@ -80,7 +80,7 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
                 </Link>
             </Box>
             {isClient && windowWidth > 0 && (
-                <Box component={'div'} paddingBottom={'25px'} marginTop={'16px'} maxWidth={'1248px'} margin={{ margin: '0 0 0 16px', lg: '0 auto' }}>
+                <Box component={'div'} paddingBottom={'25px'} marginTop={'16px'} maxWidth={'1248px'} margin={{ margin: '0', sm: '0 0 0 16px', lg: '0 auto' }}>
                     <Slider {...settings}>
                         {initialTestimonials.map((testimony, index) => (
                             <TestimonialCard key={index} name={testimony.name} review={testimony.review} image={testimony.image} />
