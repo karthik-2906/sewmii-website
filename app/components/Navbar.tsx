@@ -116,19 +116,19 @@ export default function Navbar() {
             <List
                 sx={{ width: '100%', py: 0, fontSize: '24px' }}
                 component="nav">
-                <ListItemButton>
+                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
                     <Link href="/" underline='none' color='inherit' width='100%'>
                         <ListItemText disableTypography primary="Home" />
                     </Link>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
                     <Link href="#" underline='none' color='inherit'>
                         <ListItemText disableTypography primary="About Us" />
                     </Link>
                 </ListItemButton>
 
                 {/*Products Menu */}
-                <ListItemButton onClick={() => toggleCategory('Products')}>
+                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }} onClick={() => toggleCategory('Products')}>
                     <ListItemText disableTypography primary="Products" />
                     {openCategories.Products ? <IoIosRemove style={{ height: '32px', width: '32px' }} /> : <IoIosAdd style={{ height: '32px', width: '32px' }} />}
                 </ListItemButton>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <Collapse in={openCategories.Products} timeout="auto" unmountOnExit>
                     {productCategories.map(({ name, products, link }) => (
                         <div key={name}>
-                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4, display: 'flex', justifyContent: 'space-between' }}>
+                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4, display: 'flex', justifyContent: 'space-between', backgroundColor: '#ECECEC' }}>
                                 <Link href={link} underline='none' color='inherit' onClick={(event) => event.stopPropagation()}>
                                     <ListItemText disableTypography primary={name} />
                                 </Link>
@@ -148,7 +148,7 @@ export default function Navbar() {
                     ))}
                 </Collapse>
 
-                <ListItemButton>
+                <ListItemButton sx={{ "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
                     <Link href="/calculator" underline='none' color='inherit' width='100%'>
                         <ListItemText disableTypography primary="Calculator" />
                     </Link>
@@ -168,10 +168,10 @@ export default function Navbar() {
             transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
             transition: 'transform 0.3s ease-in-out',
         }}>
-            <Box component={'div'} display={'flex'} justifyContent={'space-between'} p={{ padding: '16px', lg: '16px 0' }} alignItems={'center'} sx={{
-                maxWidth: '1248px',
-                margin: '0 auto'
-            }}>
+            {/* Header desktop */}
+
+            {/* Header mobile */}
+            <Box component={'div'} display={{ display: 'flex', md: 'none' }} justifyContent={'space-between'} p='16px' alignItems={'center'}>
                 <IoMdMenu onClick={toggleDrawer(true)} style={{ height: '24px', width: '24px' }} />
                 <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} PaperProps={{
                     sx: {
