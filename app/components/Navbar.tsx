@@ -137,7 +137,7 @@ export default function Navbar() {
                 <Collapse in={openCategories.Products} timeout="auto" unmountOnExit>
                     {productCategories.map(({ name, products, link }) => (
                         <div key={name}>
-                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4, display: 'flex', justifyContent: 'space-between', backgroundColor: '#ECECEC', "&:hover": { backgroundColor: "transparent" }, "&:active": { backgroundColor: "transparent" } }}>
+                            <ListItemButton onClick={() => toggleCategory(name)} sx={{ pl: 4, display: 'flex', justifyContent: 'space-between', backgroundColor: '#F2F2F2', "&:hover": { backgroundColor: "#F2F2F2" }, "&:active": { backgroundColor: "#F2F2F2" } }}>
                                 <Link href={link} underline='none' color='inherit' onClick={(event) => event.stopPropagation()}>
                                     <ListItemText disableTypography primary={name} />
                                 </Link>
