@@ -40,7 +40,7 @@ export default function Footer() {
                 </Box>
                 <Typography variant="subtitle1" lineHeight={'unset'} textAlign={'center'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>© sewmii 2021 - {year}</Typography>
             </Box>
-            <Box component={'div'} display={'flex'} justifyContent={'center'} padding={'16px'}>
+            <Box component={'div'} display={'flex'} justifyContent={'center'} padding={'16px 16px 32px'}>
                 <Link href='/'>
                     <Image
                         src="/logos/sewmii-logo-square.png"
