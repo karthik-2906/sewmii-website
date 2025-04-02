@@ -22,7 +22,7 @@ export default function Home() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box margin={{ margin: '96px 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
+        <Box margin={{ margin: '96px 0 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
             <Box component={'div'}>
                 <TabContext value={value}>
                     <Tabs
