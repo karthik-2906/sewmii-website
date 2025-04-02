@@ -196,7 +196,7 @@ export default function Navbar() {
                     <Link href="/calculator" underline="none" color="black" fontSize="16px" p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0' } }}>Calculator</Link>
                     <Link href="/" underline="none" color="black" fontSize="16px" p="8px 16px" borderRadius={1} sx={{ transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#f0f0f0' } }}>Services</Link>
                 </Box>
-                <Link target='_blank' href="https://shopee.ph/sewmii" underline="none" display="flex" alignItems="center" gap="4px" padding="8px 32px" borderRadius={1} sx={{ backgroundColor: "#e8e8e8", transition: "all 0.3s ease", "&:hover": { "& .button-content": { transform: "scale(0.95)" } } }}>
+                <Link target='_blank' href="https://shopee.ph/sewmii" underline="none" display="flex" alignItems="center" gap="4px" padding="8px 32px" borderRadius={1} sx={{ backgroundColor: "#e8e8e8", transition: "all 0.3s ease", "&:hover": { "& .button-content": { transform: "scale(0.95)", opacity: 0.8 } } }}>
                     <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px", transition: "transform 0.3s ease" }}>
                         {shopLogo}
                         <Typography variant="h6" color="black" fontSize="12px" fontFamily={'Source Sans Regular'}>

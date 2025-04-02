@@ -203,7 +203,6 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                 backgroundColor: "var(--calculator-3d-background)",
                 height: {height},
                 position: "relative",
-                maxWidth: 600,
             }}
         >
             <Box

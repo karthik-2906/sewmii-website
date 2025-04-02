@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import React from "react";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 export default function Home() {
 
@@ -16,32 +17,45 @@ export default function Home() {
         setValue(newValue);
     };
 
+    const theme = useTheme();
+    const isTab = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
         <Box margin={{ margin: '96px 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
-            <TabContext value={value}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    variant="scrollable"
-                    scrollButtons
-                    allowScrollButtonsMobile
-                    aria-label="scrollable force tabs example"
-                    sx={{
-                        [`& .${tabsClasses.scrollButtons}`]: {
-                            '&.Mui-disabled': { opacity: 0.3 },
-                        },
-                    }}
-                >
-                    <Tab label="Torso" value="1" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem' }} />
-                    <Tab label="Sleeve" value="2" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem' }} />
-                    <Tab label="Skirt" value="3" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem' }} />
-                    <Tab label="Pant" value="4" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem' }} />
-                </Tabs>
-                <TabPanel value="1" keepMounted={true} sx={{ padding: 0 }}><Calculator title="Torso Calculator" height="1897.42px" variant="torso" /></TabPanel>
-                <TabPanel value="2" keepMounted={true} sx={{ padding: 0 }}><Calculator title="Sleeve Calculator" height="723.783px" variant="sleeve" /></TabPanel>
-                <TabPanel value="3" keepMounted={true} sx={{ padding: 0 }}><Calculator title="Skirt Calculator" height="444.283px" variant="skirt" /></TabPanel>
-                <TabPanel value="4" keepMounted={true} sx={{ padding: 0 }}><Calculator title="Pant Calculator" height="816.95px" variant="pant" /></TabPanel>
-            </TabContext>
+            <Box component={'div'}>
+                <TabContext value={value}>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        variant="scrollable"
+                        scrollButtons
+                        allowScrollButtonsMobile
+                        // orientation={isTab ? "horizontal" : "vertical"}
+                        sx={{
+                            width: '100%',
+                            padding: { padding: 0, md: '0', sm: '0 16px' },
+                            [`& .${tabsClasses.scrollButtons}`]: {
+                                '&.Mui-disabled': { opacity: 0.3 },
+                                display: { display: "flex", sm: "none" },
+                            },
+                            '& .MuiTabs-flexContainer': {
+                                gap: { gap: '8px', md: '16px' },
+                                justifyContent: { justifyContent: 'start', md: 'center' }
+                            }
+                        }}
+                    >
+                        <Tab label="Torso" value="1" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
+                        <Tab label="Sleeve" value="2" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
+                        <Tab label="Skirt" value="3" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
+                        <Tab label="Pant" value="4" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
+                    </Tabs>
+                    <TabPanel value="1" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Torso Calculator" height={isMobile ? "1897.42px" : "1843.42px"} variant="torso" /></TabPanel>
+                    <TabPanel value="2" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Sleeve Calculator" height={isMobile ? "723.783px" : "669.783px"} variant="sleeve" /></TabPanel>
+                    <TabPanel value="3" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Skirt Calculator" height={isMobile ? "444.283px" : "390.283px"} variant="skirt" /></TabPanel>
+                    <TabPanel value="4" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Pant Calculator" height={isMobile ? "816.95px" : "762.95px"} variant="pant" /></TabPanel>
+                </TabContext>
+            </Box>
         </Box>
     );
 }
