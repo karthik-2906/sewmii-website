@@ -18,7 +18,6 @@ export default function Home() {
     };
 
     const theme = useTheme();
-    const isTab = useMediaQuery(theme.breakpoints.down("md"));
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
@@ -31,7 +30,6 @@ export default function Home() {
                         variant="scrollable"
                         scrollButtons
                         allowScrollButtonsMobile
-                        // orientation={isTab ? "horizontal" : "vertical"}
                         sx={{
                             width: '100%',
                             padding: { padding: 0, md: '0', sm: '0 16px' },
