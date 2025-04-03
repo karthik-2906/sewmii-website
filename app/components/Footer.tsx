@@ -22,7 +22,7 @@ export default function Footer() {
     }, []);
 
     return (
-        <Box component={'footer'} marginTop={'32px'} borderTop={'1px solid #DEDEDE'} display={'flex'} flexDirection={'column'}>
+        <Box component={'footer'} marginTop={'32px'} borderTop={'2px dashed #DEDEDE'} display={'flex'} flexDirection={'column'}>
             <Box component={'div'} display={'flex'} padding={'32px 16px 16px'} gap={3} justifyContent={'center'}>
                 {socialLinks.map((socialLink, index) => (
                     <Link key={index} href={socialLink.link}>

@@ -48,7 +48,12 @@ export default function HomeClient({
                 Men&apos;s Products
             </Typography>
             <TabContext value={value}>
-                <Tabs value={value} onChange={handleChange} sx={{ marginTop: 3 }}>
+                <Tabs value={value} onChange={handleChange} sx={{
+                    marginTop:'24px',
+                    '& .MuiTabs-flexContainer': {
+                        gap: { gap: '8px', md: '16px' },
+                    }
+                }}>
                     <Tab label="Basic Blocks" value="basic-blocks" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
                     <Tab label="Shirts" value="shirts" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
                     <Tab label="Pants" value="pants" sx={{ fontFamily: "Source Sans Bold", fontSize: "1rem" }} />
