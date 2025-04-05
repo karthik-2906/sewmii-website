@@ -34,8 +34,46 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
 
     return (
         <>
-            <Box component={"div"} margin={{ margin: '48px 32px 32px 16px', sm: '48px 32px 32px 0', lg: '48px 24px 32px 8px' }} sx={{ backgroundColor: "var(--calculator-3d-background)", height: { xs: '336px', sm: '304px' }, position: "relative", maxWidth: 600 }}>
-                <Box component={"div"} onClick={handleOpenOverlay} sx={{ backgroundColor: "var(--calculator-background)", border: "3px solid var(--calculator-3d-background)", width: "100%", height: { xs: '336px', sm: '304px' }, position: "absolute", left: "16px", bottom: "16px", padding: 4, display: 'flex', flexDirection: 'column', cursor: 'pointer' }}>
+            <Box
+                component={"div"}
+                margin={{
+                    margin: '48px 32px 32px 16px',
+                    sm: '48px 32px 32px 0',
+                    lg: '48px 24px 32px 8px'
+                }}
+                sx={{
+                    backgroundColor: "var(--calculator-3d-background)",
+                    height: { xs: '336px', sm: '304px' },
+                    position: "relative",
+                    maxWidth: 600,
+                    '&:hover > div': {
+                        left: 8,
+                        bottom: 8,
+                    }
+                }}
+            >
+                <Box
+                    component={"div"}
+                    onClick={handleOpenOverlay}
+                    sx={{
+                        backgroundColor: "var(--calculator-background)",
+                        border: "3px solid var(--calculator-3d-background)",
+                        width: "100%",
+                        height: { xs: '336px', sm: '304px' },
+                        position: "absolute",
+                        left: "16px",
+                        bottom: "16px",
+                        padding: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        cursor: 'pointer',
+                        transition: 'left 0.3s ease, bottom 0.3s ease',
+                        '&:hover': {
+                            left: 0,
+                            bottom: 0,
+                        }
+                    }}
+                >
                     {quoteIcon}
                     <Typography variant="h6" margin={'16px 0'} sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: { xs: 5, sm: 4 }, overflow: 'hidden' }}>{review}</Typography>
                     <Typography variant="subtitle1" marginTop={'auto'} textAlign={'right'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>- {name}</Typography>
