@@ -44,15 +44,56 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselIm
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'Source Sans Bold' }}>
                     {title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'var(--foreground)', fontFamily: 'Source Sans Regular' }}>
+                <Typography variant="body1" sx={{ color: 'var(--foreground)', fontFamily: 'Source Sans Regular' }}>
                     {desc}
                 </Typography>
             </CardContent>
             <CardActions sx={{ padding: '16px 24px 24px', gap: 1 }}>
-                <Link href={link} color="inherit" underline="none" sx={{ padding: '8px 16px', border: '2px dashed var(--foreground)', position: 'relative', display: 'inline-flex', '&:hover .hover-bg': { transform: 'scaleX(1)' }, '&:hover .hover-text': { color: 'var(--background)' } }}>
-                    <Typography variant="subtitle2" fontFamily={'Source Sans Regular'} component="p" className="hover-text" sx={{ fontSize: '1rem', zIndex: 1, color: 'var(--foreground)', transition: 'color 0.3s ease' }}>Buy Now</Typography>
-                    <Box component="span" className="hover-bg" sx={{ position: 'absolute', inset: 0, backgroundColor: 'var(--foreground)', transform: 'scaleX(0)', transition: 'transform 0.3s ease', transformOrigin: 'left', zIndex: 0 }} />
-                </Link>
+                <Box
+                    component="div"
+                    sx={{
+                        position: 'relative',
+                        display: 'inline-block',
+                    }}
+                >
+                    <Box
+                        component="div"
+                        sx={{
+                            position: 'absolute',
+                            top: '4px',
+                            left: '-4px',
+                            right: '4px',
+                            bottom: '-4px',
+                            backgroundColor: 'var(--calculator-3d-background)',
+                            zIndex: 1
+                        }}
+                    />
+                    <Link
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        href={link}
+                        underline="none"
+                        display="flex"
+                        alignItems="center"
+                        gap="4px"
+                        padding="8px 16px"
+                        sx={{
+                            position: 'relative',
+                            zIndex: 2,
+                            backgroundColor: "var(--background)",
+                            border: '3px solid var(--calculator-3d-background)',
+                            transform: 'translate(0, 0)',
+                            transition: 'all 0.3s ease',
+                            '&:hover': {
+                                transform: 'translate(-4px, 4px)',
+                            }
+                        }}
+                    >
+                        <Typography variant="h6" color="var(--foreground)" fontSize="16px" fontFamily={'Source Sans Regular'}>
+                            Buy Now
+                        </Typography>
+                    </Link>
+                </Box>
                 <Link href="#" underline="none" sx={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', color: 'inherit', transition: 'opacity 0.3s ease', '&:hover': { opacity: 0.7 }, '&:hover svg': { transform: 'translateX(6px)' } }}>
                     <Typography variant="subtitle1" component="p" fontFamily={'Source Sans Regular'} sx={{ marginRight: '6px' }}>Contact us
                     </Typography>
