@@ -292,11 +292,17 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 {PRODUCT_CATEGORIES.map((category) => (
                     <Box key={category.name}>
                         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                            {category.name}
+                            <Link
+                                href={category.link}
+                                underline='none'
+                                color='var(--foreground)'
+                            >
+                                {category.name}
+                            </Link>
                         </Typography>
                         <List>
                             {category.products.map((product) => (
-                                <ListItem key={product.id} sx={{ p: 0 }}>
+                                <ListItem key={product.id} sx={{ p: '2px 0' }}>
                                     <Link
                                         href={`${product.link}?tab=${product.query}`}
                                         underline="none"
@@ -540,53 +546,53 @@ const NavLink = ({ href, text }: { href: string; text: string }) => (
 );
 
 const ShopLink = () => (
-<Box 
-  component="div" 
-  sx={{ 
-    position: 'relative',
-    display: 'inline-block',
-  }}
->
-  <Box
-    component="div"
-    sx={{
-      position: 'absolute',
-      top: '4px',
-      left: '-4px',
-      right: '4px',
-      bottom: '-4px',
-      backgroundColor: 'var(--calculator-3d-background)',
-      zIndex: 1
-    }}
-  />
-  
-  <Link
-    target='_blank'
-    rel="noopener noreferrer"
-    href="https://shopee.ph/sewmii"
-    underline="none"
-    display="flex"
-    alignItems="center"
-    gap="4px"
-    padding="8px 24px"
-    sx={{
-      position: 'relative',
-      zIndex: 2,
-      backgroundColor: "var(--background)",
-      border: '3px solid var(--calculator-3d-background)',
-      transform: 'translate(0, 0)',
-      transition: 'all 0.3s ease',
-      '&:hover': { 
-        transform: 'translate(-4px, 4px)',
-      }
-    }}
-  >
-    <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-      {SHOP_LOGO}
-      <Typography variant="h6" color="var(--foreground)" fontSize="12px" fontFamily={'Source Sans Regular'}>
-        Buy Now
-      </Typography>
-    </span>
-  </Link>
-</Box>
+    <Box
+        component="div"
+        sx={{
+            position: 'relative',
+            display: 'inline-block',
+        }}
+    >
+        <Box
+            component="div"
+            sx={{
+                position: 'absolute',
+                top: '4px',
+                left: '-4px',
+                right: '4px',
+                bottom: '-4px',
+                backgroundColor: 'var(--calculator-3d-background)',
+                zIndex: 1
+            }}
+        />
+
+        <Link
+            target='_blank'
+            rel="noopener noreferrer"
+            href="https://shopee.ph/sewmii"
+            underline="none"
+            display="flex"
+            alignItems="center"
+            gap="4px"
+            padding="8px 24px"
+            sx={{
+                position: 'relative',
+                zIndex: 2,
+                backgroundColor: "var(--background)",
+                border: '3px solid var(--calculator-3d-background)',
+                transform: 'translate(0, 0)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                    transform: 'translate(-4px, 4px)',
+                }
+            }}
+        >
+            <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                {SHOP_LOGO}
+                <Typography variant="h6" color="var(--foreground)" fontSize="12px" fontFamily={'Source Sans Regular'}>
+                    Buy Now
+                </Typography>
+            </span>
+        </Link>
+    </Box>
 );
