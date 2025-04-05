@@ -83,7 +83,7 @@ const SHOP_LOGO = (
             fillRule="evenodd"
             clipRule="evenodd"
             d="M8.25013 6.01489C8.25003 6.00994 8.24998 6.00498 8.24998 6V5C8.24998 2.92893 9.92892 1.25 12 1.25C14.0711 1.25 15.75 2.92893 15.75 5V6C15.75 6.00498 15.7499 6.00994 15.7498 6.01489C17.0371 6.05353 17.8248 6.1924 18.4261 6.69147C19.2593 7.38295 19.4787 8.55339 19.9177 10.8943L20.6677 14.8943C21.2849 18.186 21.5934 19.8318 20.6937 20.9159C19.794 22 18.1195 22 14.7704 22H9.22954C5.88048 22 4.20595 22 3.30624 20.9159C2.40652 19.8318 2.71512 18.186 3.33231 14.8943L4.08231 10.8943C4.52122 8.55339 4.74068 7.38295 5.57386 6.69147C6.17521 6.1924 6.96287 6.05353 8.25013 6.01489ZM9.74998 5C9.74998 3.75736 10.7573 2.75 12 2.75C13.2426 2.75 14.25 3.75736 14.25 5V6C14.25 5.99999 14.25 6.00001 14.25 6C14.1747 5.99998 14.0982 6 14.0204 6H9.97954C9.90176 6 9.82525 6 9.74998 6.00002C9.74998 6.00002 9.74998 6.00003 9.74998 6.00002V5Z"
-            fill="#404040"
+            fill="var(--calculator-3d-background)"
         />
     </svg>
 );
@@ -268,7 +268,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 top: '102%',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--background)',
                 boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
                 borderLeft: '2px dashed #DEDEDE',
                 borderRight: '2px dashed #DEDEDE',
@@ -276,7 +276,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 zIndex: 1000,
                 maxWidth: '1440px',
                 width: '100%',
-                padding: '16px 0',
+                padding: '32px 0',
 
             }}
         >
@@ -286,7 +286,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '24px',
                     maxWidth: '1248px',
-                    margin: {margin: '0 16px', lg: '0 auto'}
+                    margin: { margin: '0 16px', lg: '0 auto' }
                 }}
             >
                 {PRODUCT_CATEGORIES.map((category) => (
@@ -300,10 +300,11 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                                     <Link
                                         href={`${product.link}?tab=${product.query}`}
                                         underline="none"
-                                        color="inherit"
+                                        color="#909090"
                                         sx={{
                                             display: 'block',
-                                            '&:hover': { color: 'primary.main' },
+                                            transition: '0.3s ease-in-out',
+                                            '&:hover': { color: 'var(--foreground)', transition: '0.3s ease-in-out' },
                                         }}
                                     >
                                         {product.name}
@@ -313,6 +314,13 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         </List>
                     </Box>
                 ))}
+                <Image
+                    src="/images/sewmii-pattern.jpg"
+                    alt='Sewmii Logo'
+                    height={400}
+                    width={400}
+                    style={{ height: 'auto', width: '400px' }}
+                />
             </Box>
         </Box>
     );
@@ -450,7 +458,7 @@ export default function Navbar() {
                             fontSize="16px"
                             fontFamily="Source Sans Regular"
                             textTransform="none"
-                            color="black"
+                            color="var(--foreground)"
                         >
                             Products
                         </Typography>
@@ -458,7 +466,7 @@ export default function Navbar() {
                             style={{
                                 transform: isProductsOpen ? "rotate(180deg)" : "rotate(0deg)",
                                 transition: "transform 0.3s ease",
-                                color: "black"
+                                color: "var(--foreground)"
                             }}
                         />
                     </Button>
@@ -518,7 +526,7 @@ const NavLink = ({ href, text }: { href: string; text: string }) => (
     <Link
         href={href}
         underline="none"
-        color="black"
+        color="var(--foreground)"
         fontSize="16px"
         p="8px 16px"
         borderRadius={1}
@@ -532,27 +540,53 @@ const NavLink = ({ href, text }: { href: string; text: string }) => (
 );
 
 const ShopLink = () => (
-    <Link
-        target='_blank'
-        rel="noopener noreferrer"
-        href="https://shopee.ph/sewmii"
-        underline="none"
-        display="flex"
-        alignItems="center"
-        gap="4px"
-        padding="8px 32px"
-        borderRadius={1}
-        sx={{
-            backgroundColor: "#e8e8e8",
-            transition: "all 0.3s ease",
-            "&:hover": { "& .button-content": { transform: "scale(0.95)", opacity: 0.8 } }
-        }}
-    >
-        <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px", transition: "transform 0.3s ease" }}>
-            {SHOP_LOGO}
-            <Typography variant="h6" color="black" fontSize="12px" fontFamily={'Source Sans Regular'}>
-                Buy Now
-            </Typography>
-        </span>
-    </Link>
+<Box 
+  component="div" 
+  sx={{ 
+    position: 'relative',
+    display: 'inline-block',
+  }}
+>
+  <Box
+    component="div"
+    sx={{
+      position: 'absolute',
+      top: '4px',
+      left: '-4px',
+      right: '4px',
+      bottom: '-4px',
+      backgroundColor: 'var(--calculator-3d-background)',
+      zIndex: 1
+    }}
+  />
+  
+  <Link
+    target='_blank'
+    rel="noopener noreferrer"
+    href="https://shopee.ph/sewmii"
+    underline="none"
+    display="flex"
+    alignItems="center"
+    gap="4px"
+    padding="8px 24px"
+    sx={{
+      position: 'relative',
+      zIndex: 2,
+      backgroundColor: "var(--background)",
+      border: '3px solid var(--calculator-3d-background)',
+      transform: 'translate(0, 0)',
+      transition: 'all 0.3s ease',
+      '&:hover': { 
+        transform: 'translate(-4px, 4px)',
+      }
+    }}
+  >
+    <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+      {SHOP_LOGO}
+      <Typography variant="h6" color="var(--foreground)" fontSize="12px" fontFamily={'Source Sans Regular'}>
+        Buy Now
+      </Typography>
+    </span>
+  </Link>
+</Box>
 );
