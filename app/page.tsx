@@ -1,4 +1,4 @@
-import { getTestimonials } from "./lib/getTestimonials";
+import { getTestimonials } from "./utils/getTestimonials";
 import HomeClient from "./HomeClient";
 
 export default async function Home() {
