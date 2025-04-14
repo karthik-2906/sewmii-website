@@ -45,26 +45,36 @@ interface SocialLink {
 }
 
 // Constants
+// const PRODUCT_CATEGORIES: ProductCategory[] = [
+//     {
+//         name: "Men",
+//         link: "/products/men",
+//         products: [
+//             { id: 1, name: "Basic Blocks", link: "/products/men", query: "basic-blocks" },
+//             { id: 2, name: "Shirts", link: "/products/men", query: "shirts" },
+//             { id: 3, name: "Pants", link: "/products/men", query: "pants" },
+//         ]
+//     },
+//     {
+//         name: "Women",
+//         link: "#",
+//         products: [
+//             { id: 1, name: "Basic Blocks", link: "#", query: "" },
+//             { id: 2, name: "Shirts", link: "#", query: "" },
+//             { id: 3, name: "Pants", link: "#", query: "" },
+//             { id: 4, name: "Corsets", link: "#", query: "" },
+//             { id: 5, name: "Skirts", link: "#", query: "" },
+//             { id: 6, name: "Dresses", link: "#", query: "" },
+//         ]
+//     }
+// ];
+
 const PRODUCT_CATEGORIES: ProductCategory[] = [
-    {
-        name: "Men",
-        link: "/products/men",
-        products: [
-            { id: 1, name: "Basic Blocks", link: "/products/men", query: "basic-blocks" },
-            { id: 2, name: "Shirts", link: "/products/men", query: "shirts" },
-            { id: 3, name: "Pants", link: "/products/men", query: "pants" },
-        ]
-    },
     {
         name: "Women",
         link: "#",
         products: [
-            { id: 1, name: "Basic Blocks", link: "#", query: "" },
-            { id: 2, name: "Shirts", link: "#", query: "" },
-            { id: 3, name: "Pants", link: "#", query: "" },
-            { id: 4, name: "Corsets", link: "#", query: "" },
-            { id: 5, name: "Skirts", link: "#", query: "" },
-            { id: 6, name: "Dresses", link: "#", query: "" },
+            { id: 1, name: "Corsets", link: "/products/women", query: "corsets" },
         ]
     }
 ];
@@ -282,8 +292,10 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         >
             <Box
                 sx={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    // display: 'grid',
+                    // gridTemplateColumns: 'repeat(3, 1fr)',
+                    display: 'flex',
+                    justifyContent: 'space-evenly',
                     gap: '24px',
                     maxWidth: '1248px',
                     margin: { margin: '0 16px', lg: '0 auto' }
