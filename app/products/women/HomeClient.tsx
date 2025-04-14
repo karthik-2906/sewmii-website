@@ -9,32 +9,24 @@ import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import Typography from "@mui/material/Typography";
 import ProductCard from "@/app/components/ProductCard";
-import { mensProductCategories, ProductCardInfo } from "@/public/data/productCategories";
+import { ProductCardInfo, womensProductCategories } from "@/public/data/productCategories";
 
 type ProductData = {
-    blocks: ProductCardInfo[];
-    shirts: ProductCardInfo[];
-    pants: ProductCardInfo[];
+    corsets: ProductCardInfo[];
 };
 
 export default function HomeClient({
-    initialBlocks,
-    initialShirts,
-    initialPants,
+    initialCorsets,
 }: {
-    initialBlocks: ProductCardInfo[];
-    initialShirts: ProductCardInfo[];
-    initialPants: ProductCardInfo[];
+    initialCorsets: ProductCardInfo[];
 }) {
     const searchParams = useSearchParams();
     const router = useRouter();
     const queryTab = searchParams.get("tab");
-    const [value, setValue] = useState(queryTab || mensProductCategories[0].value);
+    const [value, setValue] = useState(queryTab || womensProductCategories[0].value);
 
     const productData: ProductData = {
-        blocks: initialBlocks,
-        shirts: initialShirts,
-        pants: initialPants
+        corsets: initialCorsets
     };
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -45,7 +37,7 @@ export default function HomeClient({
     return (
         <Box component="div" maxWidth={"1248px"} margin={{ margin: '96px 16px 0', md: '120px 16px 0', lg: '120px auto 0' }}>
             <Typography variant="h5" component="h2" fontFamily={"Source Sans Bold"} fontSize={"2rem"}>
-                Men&apos;s Products
+                Women&apos;s Products
             </Typography>
             <TabContext value={value}>
                 <Tabs value={value} onChange={handleChange} sx={{
@@ -54,7 +46,7 @@ export default function HomeClient({
                         gap: { gap: '8px', md: '16px' },
                     }
                 }}>
-                    {mensProductCategories.map((category) => (
+                    {womensProductCategories.map((category) => (
                         <Tab
                             key={category.value}
                             label={category.label}
@@ -63,18 +55,30 @@ export default function HomeClient({
                         />
                     ))}
                 </Tabs>
-                
-                {mensProductCategories.map((category) => (
+
+                {womensProductCategories.map((category) => (
                     <TabPanel key={category.value} value={category.value} keepMounted={true} sx={{ padding: 0 }}>
-                        <Box component="div" marginTop={4} display="flex" flexDirection={{ flexDirection: "column", sm: "row" }} flexWrap={"wrap"} gap={{ gap: "32px", sm: "16px" }}>
+                        <Box
+                            component="div"
+                            sx={{
+                                display: 'grid',
+                                gridTemplateColumns: {
+                                    xs: '1fr',
+                                    sm: 'repeat(2, 1fr)',
+                                    md: 'repeat(3, 1fr)',
+                                },
+                                gap: '24px',
+                                marginTop: 4
+                            }}
+                        >
                             {productData[category.value as keyof ProductData]?.map((product) => (
-                                <ProductCard 
-                                    key={product.id} 
-                                    title={product.title} 
-                                    desc={product.desc} 
+                                <ProductCard
+                                    key={product.id}
+                                    title={product.title}
+                                    desc={product.desc}
                                     shopeeLink={product.shopeeLink}
                                     etsyLink={product.etsyLink}
-                                    carouselImages={product.carouselImages} 
+                                    carouselImages={product.carouselImages}
                                 />
                             ))}
                         </Box>

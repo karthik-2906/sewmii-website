@@ -5,14 +5,7 @@ import Box from "@mui/material/Box";
 import Link from '@mui/material/Link';
 import Image from 'next/image';
 import { useEffect, useState } from "react";
-
-const socialLinks = [
-    { imgSrc: '/icons/shopee.svg', imgAlt: 'shopee', link: 'https://shopee.ph/sewmii' },
-    { imgSrc: '/icons/tiktok.svg', imgAlt: 'tiktok', link: 'https://www.tiktok.com/@sewmii.studio' },
-    { imgSrc: '/icons/instagram.svg', imgAlt: 'instagram', link: 'https://www.instagram.com/sewmii.studio/' },
-    { imgSrc: '/icons/youtube.svg', imgAlt: 'youtube', link: 'https://www.youtube.com/@sewmii' },
-    { imgSrc: '/icons/mail.svg', imgAlt: 'tiktok', link: 'mailto:sewmiiofficial@gmail.com' },
-];
+import { socialLinks } from '../../public/data/socialLinks';
 
 export default function Footer() {
     const [year, setYear] = useState(new Date().getFullYear());

@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export async function getMensProducts() {
-    const dataDir = path.join(process.cwd(), 'public', 'data');
+    const dataDir = path.join(process.cwd(), 'public', 'data', 'products', 'men');
 
     const readJsonFile = (filename: string) => {
         const filePath = path.join(dataDir, filename);
