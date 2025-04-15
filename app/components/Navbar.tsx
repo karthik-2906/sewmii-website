@@ -30,6 +30,22 @@ import Button3D from './Button3D';
 
 const SCROLL_THRESHOLD = 56;
 
+const useMediaQuery = (query: string) => {
+    const [matches, setMatches] = useState(false);
+
+    useEffect(() => {
+        const media = window.matchMedia(query);
+        if (media.matches !== matches) {
+            setMatches(media.matches);
+        }
+        const listener = () => setMatches(media.matches);
+        media.addListener(listener);
+        return () => media.removeListener(listener);
+    }, [matches, query]);
+
+    return matches;
+};
+
 // Sub-components
 const SubMenu = ({
     categoryName,
@@ -58,6 +74,7 @@ const SubMenu = ({
     </Collapse>
 );
 
+// Mobile Navigation
 const DrawerContent = ({
     toggleDrawer,
     toggleCategory,
@@ -178,10 +195,8 @@ const DrawerContent = ({
 const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    // Close dropdown when clicking outside or when the button is clicked again
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            // Check if the click is outside the dropdown AND not on the Products button
             if (dropdownRef.current &&
                 !dropdownRef.current.contains(event.target as Node) &&
                 !(event.target as HTMLElement).closest('[aria-controls="products-menu"]')) {
@@ -198,26 +213,20 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         };
     }, [isOpen, onClose]);
 
-    if (!isOpen) return null;
-
     return (
         <Box
             ref={dropdownRef}
             sx={{
-                position: 'absolute',
-                top: '102%',
+                display: { xs: 'none', md: 'block' },
+                position: 'fixed',
+                top: isOpen ? '94px' : '-86%',
+                transition: '500ms',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 backgroundColor: 'var(--background)',
-                boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-                borderLeft: '2px dashed #DEDEDE',
-                borderRight: '2px dashed #DEDEDE',
-                borderBottom: '2px dashed #DEDEDE',
-                zIndex: 1000,
-                maxWidth: '1440px',
+                zIndex: 9,
                 width: '100%',
                 padding: '32px 0',
-
             }}
         >
             <Box
@@ -267,6 +276,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     alt='Sewmii Logo'
                     height={400}
                     width={400}
+                    loading='eager'
                     style={{ height: 'auto', width: '400px' }}
                 />
             </Box>
@@ -274,21 +284,24 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
     );
 };
 
-const useMediaQuery = (query: string) => {
-    const [matches, setMatches] = useState(false);
-
-    useEffect(() => {
-        const media = window.matchMedia(query);
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-        const listener = () => setMatches(media.matches);
-        media.addListener(listener);
-        return () => media.removeListener(listener);
-    }, [matches, query]);
-
-    return matches;
-};
+const Overlay = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => (
+    <Box
+        sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 8,
+            opacity: isOpen ? 1 : 0,
+            pointerEvents: isOpen ? 'auto' : 'none',
+            transition: 'opacity 500ms ease',
+            display: { xs: 'none', md: 'block' },
+        }}
+        onClick={onClick}
+    />
+);
 
 // Small reusable components
 const NavLink = ({ href, text }: { href: string; text: string }) => (
@@ -370,119 +383,121 @@ export default function Navbar() {
     };
 
     return (
-        <Box component={'header'} sx={{
-            position: 'fixed',
-            width: '100%',
-            top: 0,
-            zIndex: 10,
-            backgroundColor: 'var(--background)',
-            borderBottom: '2px dashed #DEDEDE',
-            transform: isMobile ? (isVisible ? 'translateY(0)' : 'translateY(-100%)') : 'translateY(0)',
-            transition: 'transform 0.3s ease-in-out',
-        }}>
+        <>
+            <Box component={'header'} sx={{
+                position: 'fixed',
+                width: '100%',
+                top: 0,
+                zIndex: 10,
+                backgroundColor: 'var(--background)',
+                borderBottom: '2px dashed #DEDEDE',
+                transform: isMobile ? (isVisible ? 'translateY(0)' : 'translateY(-100%)') : 'translateY(0)',
+                transition: 'transform 0.3s ease-in-out',
+            }}>
 
-            {/* Header desktop */}
-            <Box
-                display={{ xs: 'none', md: 'flex' }}
-                justifyContent={'space-between'}
-                py={3}
-                px={{ xs: 2, lg: 0 }}
-                alignItems={'center'}
-                maxWidth={'1248px'}
-                margin={'0 auto'}
-            >
-                <Link href='/' aria-label="Home">
-                    <Image
-                        src="/logos/sewmii-logo-text.png"
-                        alt='Sewmii Logo'
-                        height={24}
-                        width={631}
-                        style={{ height: '24px', width: 'auto' }}
-                        priority
-                    />
-                </Link>
-
-                <Box display={'flex'} gap={0} alignItems={'center'}>
-                    <NavLink href="/" text="Home" />
-
-                    <Button
-                        onClick={toggleDesktopMenu}
-                        sx={{
-                            display: "flex",
-                            gap: "4px",
-                            alignItems: "center",
-                            p: "8px 16px",
-                            borderRadius: 1,
-                            transition: "background-color 0.3s ease",
-                            "&:hover": { backgroundColor: "#f0f0f0" }
-                        }}
-                        aria-expanded={isProductsOpen}
-                        aria-controls="products-menu"
-                    >
-                        <Typography
-                            variant="h6"
-                            fontSize="16px"
-                            fontFamily="Source Sans Regular"
-                            textTransform="none"
-                            color="var(--foreground)"
-                        >
-                            Products
-                        </Typography>
-                        <IoIosArrowDown
-                            style={{
-                                transform: isProductsOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                transition: "transform 0.3s ease",
-                                color: "var(--foreground)"
-                            }}
+                {/* Header desktop */}
+                <Box
+                    display={{ xs: 'none', md: 'flex' }}
+                    justifyContent={'space-between'}
+                    py={3}
+                    px={{ xs: 2, lg: 0 }}
+                    alignItems={'center'}
+                    maxWidth={'1248px'}
+                    margin={'0 auto'}
+                >
+                    <Link href='/' aria-label="Home">
+                        <Image
+                            src="/logos/sewmii-logo-text.png"
+                            alt='Sewmii Logo'
+                            height={24}
+                            width={631}
+                            style={{ height: '24px', width: 'auto' }}
+                            priority
                         />
-                    </Button>
+                    </Link>
 
-                    <ProductsDropdown isOpen={isProductsOpen} onClose={closeProductsMenu} />
+                    <Box display={'flex'} gap={0} alignItems={'center'}>
+                        <NavLink href="/" text="Home" />
 
-                    <NavLink href="/calculator" text="Calculator" />
-                    <NavLink href="/" text="Services" />
+                        <Button
+                            onClick={toggleDesktopMenu}
+                            sx={{
+                                display: "flex",
+                                gap: "4px",
+                                alignItems: "center",
+                                p: "8px 16px",
+                                borderRadius: 1,
+                                transition: "background-color 0.3s ease",
+                                "&:hover": { backgroundColor: "#f0f0f0" }
+                            }}
+                            aria-expanded={isProductsOpen}
+                            aria-controls="products-menu"
+                        >
+                            <Typography
+                                variant="h6"
+                                fontSize="16px"
+                                fontFamily="Source Sans Regular"
+                                textTransform="none"
+                                color="var(--foreground)"
+                            >
+                                Products
+                            </Typography>
+                            <IoIosArrowDown
+                                style={{
+                                    transform: isProductsOpen ? "rotate(180deg)" : "rotate(0deg)",
+                                    transition: "transform 0.3s ease",
+                                    color: "var(--foreground)"
+                                }}
+                            />
+                        </Button>
+
+                        <NavLink href="/calculator" text="Calculator" />
+                        <NavLink href="/" text="Services" />
+                    </Box>
+
+                    <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopIcon}>Shop Now</Button3D>
                 </Box>
 
-                <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopIcon}>Shop Now</Button3D>
-            </Box>
-
-            {/* Header mobile */}
-            <Box
-                display={{ xs: 'flex', md: 'none' }}
-                justifyContent={'space-between'}
-                p={2}
-                alignItems={'center'}
-            >
-                <IoMdMenu
-                    onClick={toggleDrawer(true)}
-                    style={{ height: '24px', width: '24px', cursor: 'pointer' }}
-                    aria-label="Open menu"
-                />
-
-                <Drawer
-                    anchor="left"
-                    open={isDrawerOpen}
-                    onClose={toggleDrawer(false)}
-                    PaperProps={drawerPaperProps}
+                {/* Header mobile */}
+                <Box
+                    display={{ xs: 'flex', md: 'none' }}
+                    justifyContent={'space-between'}
+                    p={2}
+                    alignItems={'center'}
                 >
-                    <DrawerContent
-                        toggleDrawer={toggleDrawer}
-                        toggleCategory={toggleCategory}
-                        openCategories={openCategories}
+                    <IoMdMenu
+                        onClick={toggleDrawer(true)}
+                        style={{ height: '24px', width: '24px', cursor: 'pointer' }}
+                        aria-label="Open menu"
                     />
-                </Drawer>
 
-                <Link href='/' aria-label="Home">
-                    <Image
-                        src="/logos/sewmii-logo-text.png"
-                        alt='Sewmii Logo'
-                        height={24}
-                        width={631}
-                        style={{ height: '24px', width: 'auto' }}
-                        priority
-                    />
-                </Link>
+                    <Drawer
+                        anchor="left"
+                        open={isDrawerOpen}
+                        onClose={toggleDrawer(false)}
+                        PaperProps={drawerPaperProps}
+                    >
+                        <DrawerContent
+                            toggleDrawer={toggleDrawer}
+                            toggleCategory={toggleCategory}
+                            openCategories={openCategories}
+                        />
+                    </Drawer>
+
+                    <Link href='/' aria-label="Home">
+                        <Image
+                            src="/logos/sewmii-logo-text.png"
+                            alt='Sewmii Logo'
+                            height={24}
+                            width={631}
+                            style={{ height: '24px', width: 'auto' }}
+                            priority
+                        />
+                    </Link>
+                </Box>
             </Box>
-        </Box>
+            <Overlay isOpen={isProductsOpen} onClick={closeProductsMenu} />
+            <ProductsDropdown isOpen={isProductsOpen} onClose={closeProductsMenu} />
+        </>
     );
 }
