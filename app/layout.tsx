@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingMenu from "./components/FloatingMenu";
 
 const desc = "Sewmii Pattern Studio - Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             <body>
                 <Navbar />
                 {children}
+                <FloatingMenu />
                 <Footer />
                 <Analytics />
             </body>

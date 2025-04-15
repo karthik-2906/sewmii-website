@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getMensProducts } from "@/app/lib/getMensProducts";
+import { getMensProducts } from "@/app/utils/getMensProducts";
 import HomeClient from "./HomeClient";
 
 export default async function HomePage() {

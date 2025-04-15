@@ -4,11 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { etsyIcon, shopeeIcon } from '@/public/data/images';
+import Button3D from './Button3D';
 
 interface CarouselImage {
     src: string;
@@ -18,11 +19,12 @@ interface CarouselImage {
 interface ProductCardProps {
     title: string;
     desc: string;
-    link: string;
+    shopeeLink: string;
+    etsyLink: string;
     carouselImages: CarouselImage[];
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselImages = [] }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsyLink, carouselImages = [] }) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -32,11 +34,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselIm
     };
 
     return (
-        <Card sx={{ width: { width: '100%', sm: 'calc(50% - 8px)' }, borderRadius: 0, boxShadow: '0 4px 40px rgba(34,59,149,.08)' }}>
+        <Card sx={{ width: '100%', borderRadius: 0, boxShadow: '0 4px 40px rgba(34,59,149,.08)' }}>
             {carouselImages.length > 0 ? <Box component={'div'} className="slider-container" marginBottom={3}>
                 <Slider {...settings}>
                     {carouselImages.map((images, index) => (
-                        <Image key={index} src={images.src} alt={images.alt} height={400} width={400} style={{ width: '100%', height: 'auto' }} />
+                        <Box key={index} component="div" sx={{ position: 'relative', width: '100%', height: '375px' }}>
+                            <Image
+                                src={images.src}
+                                alt={images.alt}
+                                fill
+                                style={{ objectFit: 'cover' }}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        </Box>
                     ))}
                 </Slider>
             </Box> : ''}
@@ -48,59 +58,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, link, carouselIm
                     {desc}
                 </Typography>
             </CardContent>
-            <CardActions sx={{ padding: '16px 24px 24px', gap: 1 }}>
-                <Box
-                    component="div"
-                    sx={{
-                        position: 'relative',
-                        display: 'inline-block',
-                    }}
-                >
-                    <Box
-                        component="div"
-                        sx={{
-                            position: 'absolute',
-                            top: '4px',
-                            left: '-4px',
-                            right: '4px',
-                            bottom: '-4px',
-                            backgroundColor: 'var(--calculator-3d-background)',
-                            zIndex: 1
-                        }}
-                    />
-                    <Link
-                        target='_blank'
-                        rel="noopener noreferrer"
-                        href={link}
-                        underline="none"
-                        display="flex"
-                        alignItems="center"
-                        gap="4px"
-                        padding="8px 16px"
-                        sx={{
-                            position: 'relative',
-                            zIndex: 2,
-                            backgroundColor: "var(--background)",
-                            border: '3px solid var(--calculator-3d-background)',
-                            transform: 'translate(0, 0)',
-                            transition: 'all 0.3s ease',
-                            '&:hover': {
-                                transform: 'translate(-4px, 4px)',
-                            }
-                        }}
-                    >
-                        <Typography variant="h6" color="var(--foreground)" fontSize="16px" fontFamily={'Source Sans Regular'}>
-                            Buy Now
-                        </Typography>
-                    </Link>
-                </Box>
-                <Link href="#" underline="none" sx={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', color: 'inherit', transition: 'opacity 0.3s ease', '&:hover': { opacity: 0.7 }, '&:hover svg': { transform: 'translateX(6px)' } }}>
-                    <Typography variant="subtitle1" component="p" fontFamily={'Source Sans Regular'} sx={{ marginRight: '6px' }}>Contact us
-                    </Typography>
-                    <Box component="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" sx={{ width: '1rem', height: '1rem', transition: 'transform 0.3s ease' }}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </Box>
-                </Link>
+            <CardActions sx={{
+                padding: '16px 24px 24px',
+                flexWrap: 'wrap',
+                '& > :not(style) ~ :not(style)': {
+                    marginLeft: 0
+                },
+                gap: 2
+            }}>
+                {etsyLink && (
+                    <Button3D href={etsyLink} image={etsyIcon}>
+                        Buy Now
+                    </Button3D>
+                )}
+                {shopeeLink && (
+                    <Button3D href={shopeeLink} image={shopeeIcon}>
+                        Buy Now
+                    </Button3D>
+                )}
             </CardActions>
         </Card>
     )

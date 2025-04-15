@@ -1,0 +1,65 @@
+[
+    {
+        "id": "women-corsets-01",
+        "title": "Women's Corset 1",
+        "desc": "A basic corset pattern for Women, available in multiple sizes.",
+        "shopeeLink": "#1",
+        "etsyLink": "https://www.etsy.com/shop/Sewmii",
+        "carouselImages": [
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            }
+        ]
+    },
+    {
+        "id": "women-corsets-02",
+        "title": "Women's Corset 2",
+        "desc": "A basic corset pattern for Women, available in multiple sizes.",
+        "shopeeLink": "",
+        "etsyLink": "",
+        "carouselImages": [
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            }
+        ]
+    },
+    {
+        "id": "women-corsets-03",
+        "title": "Women's Corset 3",
+        "desc": "A basic corset pattern for Women, available in multiple sizes.",
+        "shopeeLink": "",
+        "etsyLink": "https://www.etsy.com/shop/Sewmii",
+        "carouselImages": [
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-pattern.jpg",
+                "alt": "temp-alt"
+            }
+        ]
+    }
+]

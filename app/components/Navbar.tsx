@@ -23,80 +23,10 @@ import {
     IoIosRemove,
     IoIosArrowDown
 } from "react-icons/io";
-
-// Types
-interface Product {
-    id: number;
-    name: string;
-    link: string;
-    query: string;
-}
-
-interface ProductCategory {
-    name: string;
-    link: string;
-    products: Product[];
-}
-
-interface SocialLink {
-    imgSrc: string;
-    imgAlt: string;
-    link: string;
-}
-
-// Constants
-// const PRODUCT_CATEGORIES: ProductCategory[] = [
-//     {
-//         name: "Men",
-//         link: "/products/men",
-//         products: [
-//             { id: 1, name: "Basic Blocks", link: "/products/men", query: "basic-blocks" },
-//             { id: 2, name: "Shirts", link: "/products/men", query: "shirts" },
-//             { id: 3, name: "Pants", link: "/products/men", query: "pants" },
-//         ]
-//     },
-//     {
-//         name: "Women",
-//         link: "#",
-//         products: [
-//             { id: 1, name: "Basic Blocks", link: "#", query: "" },
-//             { id: 2, name: "Shirts", link: "#", query: "" },
-//             { id: 3, name: "Pants", link: "#", query: "" },
-//             { id: 4, name: "Corsets", link: "#", query: "" },
-//             { id: 5, name: "Skirts", link: "#", query: "" },
-//             { id: 6, name: "Dresses", link: "#", query: "" },
-//         ]
-//     }
-// ];
-
-const PRODUCT_CATEGORIES: ProductCategory[] = [
-    {
-        name: "Women",
-        link: "#",
-        products: [
-            { id: 1, name: "Corsets", link: "/products/women", query: "corsets" },
-        ]
-    }
-];
-
-const SOCIAL_LINKS: SocialLink[] = [
-    { imgSrc: '/icons/shopee.svg', imgAlt: 'shopee', link: 'https://shopee.ph/sewmii' },
-    { imgSrc: '/icons/tiktok.svg', imgAlt: 'tiktok', link: 'https://www.tiktok.com/@sewmii.studio' },
-    { imgSrc: '/icons/instagram.svg', imgAlt: 'instagram', link: 'https://www.instagram.com/sewmii.studio/' },
-    { imgSrc: '/icons/youtube.svg', imgAlt: 'youtube', link: 'https://www.youtube.com/@sewmii' },
-    { imgSrc: '/icons/mail.svg', imgAlt: 'tiktok', link: 'mailto:sewmiiofficial@gmail.com' },
-];
-
-const SHOP_LOGO = (
-    <svg height='24px' width='24px' viewBox="0 0 24 24" fill="none">
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M8.25013 6.01489C8.25003 6.00994 8.24998 6.00498 8.24998 6V5C8.24998 2.92893 9.92892 1.25 12 1.25C14.0711 1.25 15.75 2.92893 15.75 5V6C15.75 6.00498 15.7499 6.00994 15.7498 6.01489C17.0371 6.05353 17.8248 6.1924 18.4261 6.69147C19.2593 7.38295 19.4787 8.55339 19.9177 10.8943L20.6677 14.8943C21.2849 18.186 21.5934 19.8318 20.6937 20.9159C19.794 22 18.1195 22 14.7704 22H9.22954C5.88048 22 4.20595 22 3.30624 20.9159C2.40652 19.8318 2.71512 18.186 3.33231 14.8943L4.08231 10.8943C4.52122 8.55339 4.74068 7.38295 5.57386 6.69147C6.17521 6.1924 6.96287 6.05353 8.25013 6.01489ZM9.74998 5C9.74998 3.75736 10.7573 2.75 12 2.75C13.2426 2.75 14.25 3.75736 14.25 5V6C14.25 5.99999 14.25 6.00001 14.25 6C14.1747 5.99998 14.0982 6 14.0204 6H9.97954C9.90176 6 9.82525 6 9.74998 6.00002C9.74998 6.00002 9.74998 6.00003 9.74998 6.00002V5Z"
-            fill="var(--calculator-3d-background)"
-        />
-    </svg>
-);
+import { shopIcon } from '@/public/data/images';
+import { socialLinks } from '@/public/data/socialLinks';
+import { productCategories, Product } from '@/public/data/productCategories';
+import Button3D from './Button3D';
 
 const SCROLL_THRESHOLD = 56;
 
@@ -171,7 +101,7 @@ const DrawerContent = ({
 
             {/* Products Sub-Menu */}
             <Collapse in={openCategories.Products} timeout="auto" unmountOnExit>
-                {PRODUCT_CATEGORIES.map(({ name, products, link }) => (
+                {productCategories.map(({ name, products, link }) => (
                     <div key={name}>
                         <ListItemButton
                             onClick={() => toggleCategory(name)}
@@ -229,7 +159,7 @@ const DrawerContent = ({
         <Box position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)' }}>
             <Divider />
             <Box display={'flex'} padding={2} gap={2}>
-                {SOCIAL_LINKS.map((socialLink, index) => (
+                {socialLinks.map((socialLink, index) => (
                     <Link key={index} href={socialLink.link} target="_blank" rel="noopener noreferrer">
                         <Image
                             src={socialLink.imgSrc}
@@ -301,7 +231,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     margin: { margin: '0 16px', lg: '0 auto' }
                 }}
             >
-                {PRODUCT_CATEGORIES.map((category) => (
+                {productCategories.map((category) => (
                     <Box key={category.name}>
                         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                             <Link
@@ -359,6 +289,24 @@ const useMediaQuery = (query: string) => {
 
     return matches;
 };
+
+// Small reusable components
+const NavLink = ({ href, text }: { href: string; text: string }) => (
+    <Link
+        href={href}
+        underline="none"
+        color="var(--foreground)"
+        fontSize="16px"
+        p="8px 16px"
+        borderRadius={1}
+        sx={{
+            transition: 'background-color 0.3s ease',
+            '&:hover': { backgroundColor: '#f0f0f0' }
+        }}
+    >
+        {text}
+    </Link>
+);
 
 export default function Navbar() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -495,7 +443,7 @@ export default function Navbar() {
                     <NavLink href="/" text="Services" />
                 </Box>
 
-                <ShopLink />
+                <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopIcon}>Shop Now</Button3D>
             </Box>
 
             {/* Header mobile */}
@@ -538,73 +486,3 @@ export default function Navbar() {
         </Box>
     );
 }
-
-// Small reusable components
-const NavLink = ({ href, text }: { href: string; text: string }) => (
-    <Link
-        href={href}
-        underline="none"
-        color="var(--foreground)"
-        fontSize="16px"
-        p="8px 16px"
-        borderRadius={1}
-        sx={{
-            transition: 'background-color 0.3s ease',
-            '&:hover': { backgroundColor: '#f0f0f0' }
-        }}
-    >
-        {text}
-    </Link>
-);
-
-const ShopLink = () => (
-    <Box
-        component="div"
-        sx={{
-            position: 'relative',
-            display: 'inline-block',
-        }}
-    >
-        <Box
-            component="div"
-            sx={{
-                position: 'absolute',
-                top: '4px',
-                left: '-4px',
-                right: '4px',
-                bottom: '-4px',
-                backgroundColor: 'var(--calculator-3d-background)',
-                zIndex: 1
-            }}
-        />
-
-        <Link
-            target='_blank'
-            rel="noopener noreferrer"
-            href="https://shopee.ph/sewmii"
-            underline="none"
-            display="flex"
-            alignItems="center"
-            gap="4px"
-            padding="8px 24px"
-            sx={{
-                position: 'relative',
-                zIndex: 2,
-                backgroundColor: "var(--background)",
-                border: '3px solid var(--calculator-3d-background)',
-                transform: 'translate(0, 0)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                    transform: 'translate(-4px, 4px)',
-                }
-            }}
-        >
-            <span className="button-content" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                {SHOP_LOGO}
-                <Typography variant="h6" color="var(--foreground)" fontSize="12px" fontFamily={'Source Sans Regular'}>
-                    Buy Now
-                </Typography>
-            </span>
-        </Link>
-    </Box>
-);
