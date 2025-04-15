@@ -23,7 +23,7 @@ import {
     IoIosRemove,
     IoIosArrowDown
 } from "react-icons/io";
-import { shopLogo } from '@/public/data/images';
+import { shopIcon } from '@/public/data/images';
 import { socialLinks } from '@/public/data/socialLinks';
 import { productCategories, Product } from '@/public/data/productCategories';
 import Button3D from './Button3D';
@@ -443,7 +443,7 @@ export default function Navbar() {
                     <NavLink href="/" text="Services" />
                 </Box>
 
-                <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopLogo}>Shop Now</Button3D>
+                <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopIcon}>Shop Now</Button3D>
             </Box>
 
             {/* Header mobile */}

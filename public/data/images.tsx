@@ -1,4 +1,4 @@
-export const shopLogo = (
+export const shopIcon = (
     <svg height='24px' width='24px' viewBox="0 0 24 24" fill="none">
         <path
             fillRule="evenodd"
