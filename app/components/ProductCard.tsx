@@ -38,7 +38,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
             {carouselImages.length > 0 ? <Box component={'div'} className="slider-container" marginBottom={3}>
                 <Slider {...settings}>
                     {carouselImages.map((images, index) => (
-                        <Image key={index} src={images.src} alt={images.alt} height={375} width={375} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
+                        <Box key={index} component="div" sx={{ position: 'relative', width: '100%', height: '375px' }}>
+                            <Image
+                                src={images.src}
+                                alt={images.alt}
+                                fill
+                                style={{ objectFit: 'cover' }}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        </Box>
                     ))}
                 </Slider>
             </Box> : ''}
