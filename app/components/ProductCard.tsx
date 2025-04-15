@@ -44,6 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
                                 alt={images.alt}
                                 fill
                                 style={{ objectFit: 'cover' }}
+                                loading='eager'
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </Box>
