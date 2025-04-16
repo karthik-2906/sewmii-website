@@ -200,7 +200,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
             component={"div"}
             margin={{ margin: "48px 32px 32px 16px", md: '48px 16px 32px 0' }}
             sx={{
-                backgroundColor: "var(--calculator-3d-background)",
+                backgroundColor: "var(--color-secondary)",
                 height: {height},
                 position: "relative",
             }}
@@ -208,14 +208,14 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
             <Box
                 component={"div"}
                 sx={{
-                    backgroundColor: "var(--calculator-background)",
-                    border: "3px solid var(--calculator-3d-background)",
+                    backgroundColor: "var(--background)",
+                    border: "3px solid var(--color-secondary)",
                     width: "100%",
                     position: "absolute",
                     left: "16px",
                     bottom: "16px",
                     padding: 4,
-                    color: "var(--calculator-3d-background)",
+                    color: "var(--color-secondary)",
                 }}
             >
                 <Box component={"div"} display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
@@ -255,7 +255,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                     <Box
                                         component={"div"}
                                         sx={{
-                                            backgroundColor: "var(--calculator-3d-background)",
+                                            backgroundColor: "var(--color-secondary)",
                                             height: 48,
                                             position: "relative",
                                             marginTop: "12px",
@@ -267,7 +267,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             variant="outlined"
                                             disabled={inputs.hidden}
                                             sx={{
-                                                backgroundColor: "var(--calculator-background)",
+                                                backgroundColor: "var(--background)",
                                                 position: "absolute",
                                                 left: "8px",
                                                 bottom: "8px",
@@ -305,7 +305,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                     <Box
                                         component={"div"}
                                         sx={{
-                                            backgroundColor: "var(--calculator-3d-background)",
+                                            backgroundColor: "var(--color-secondary)",
                                             height: 48,
                                             position: "relative",
                                             marginTop: "12px",
@@ -317,7 +317,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             variant="outlined"
                                             disabled={true}
                                             sx={{
-                                                backgroundColor: "var(--calculator-background)",
+                                                backgroundColor: "var(--background)",
                                                 position: "absolute",
                                                 left: "8px",
                                                 bottom: "8px",
@@ -328,7 +328,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                     </Box>
                                 </Box>
                             </Box>
-                            {inputs.divider == true ? <Divider sx={{ borderWidth: 1, borderColor: 'var(--calculator-3d-background)', margin: '24px 0' }} /> : ''}
+                            {inputs.divider == true ? <Divider sx={{ borderWidth: 1, borderColor: 'var(--color-secondary)', margin: '24px 0' }} /> : ''}
                         </div>
                     ))}
                 </Box>

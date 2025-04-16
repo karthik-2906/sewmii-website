@@ -23,7 +23,7 @@ import {
     IoIosRemove,
     IoIosArrowDown
 } from "react-icons/io";
-import { shopIcon } from '@/public/data/images';
+import { etsyIcon, shopeeIcon } from '@/public/data/images';
 import { socialLinks } from '@/public/data/socialLinks';
 import { productCategories, Product } from '@/public/data/productCategories';
 import Button3D from './Button3D';
@@ -246,7 +246,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                             <Link
                                 href={category.link}
                                 underline='none'
-                                color='var(--foreground)'
+                                color='var(--color-primary)'
                             >
                                 {category.name}
                             </Link>
@@ -261,7 +261,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                                         sx={{
                                             display: 'block',
                                             transition: '0.3s ease-in-out',
-                                            '&:hover': { color: 'var(--foreground)', transition: '0.3s ease-in-out' },
+                                            '&:hover': { color: 'var(--color-primary)', transition: '0.3s ease-in-out' },
                                         }}
                                     >
                                         {product.name}
@@ -308,7 +308,7 @@ const NavLink = ({ href, text }: { href: string; text: string }) => (
     <Link
         href={href}
         underline="none"
-        color="var(--foreground)"
+        color="var(--color-primary)"
         fontSize="16px"
         p="8px 16px"
         borderRadius={1}
@@ -415,7 +415,6 @@ export default function Navbar() {
                             priority
                         />
                     </Link>
-
                     <Box display={'flex'} gap={0} alignItems={'center'}>
                         <NavLink href="/" text="Home" />
 
@@ -438,7 +437,7 @@ export default function Navbar() {
                                 fontSize="16px"
                                 fontFamily="Source Sans Regular"
                                 textTransform="none"
-                                color="var(--foreground)"
+                                color="var(--color-primary)"
                             >
                                 Products
                             </Typography>
@@ -446,7 +445,7 @@ export default function Navbar() {
                                 style={{
                                     transform: isProductsOpen ? "rotate(180deg)" : "rotate(0deg)",
                                     transition: "transform 0.3s ease",
-                                    color: "var(--foreground)"
+                                    color: "var(--color-primary)"
                                 }}
                             />
                         </Button>
@@ -454,8 +453,10 @@ export default function Navbar() {
                         <NavLink href="/calculator" text="Calculator" />
                         <NavLink href="/" text="Services" />
                     </Box>
-
-                    <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopIcon}>Shop Now</Button3D>
+                    <Box component={'div'} display={'flex'} gap={2} alignItems={'center'}>
+                        <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={etsyIcon}>Shop Now</Button3D>
+                        <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopeeIcon}>Shop Now</Button3D>
+                    </Box>
                 </Box>
 
                 {/* Header mobile */}
