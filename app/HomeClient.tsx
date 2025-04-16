@@ -52,10 +52,13 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
     const settingsxl = {
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         dots: true,
         arrows: true,
-        swipe: false
+        swipe: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 500
     };
 
     let settings;
@@ -70,7 +73,7 @@ export default function HomeClient({ initialTestimonials }: { initialTestimonial
         <Box component={'div'}>
             <Box margin={{ margin: '96px 16px 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
                 <Typography variant="h2" fontFamily={'Source Sans Bold'}>Under Development</Typography>
-                <Box display={'flex'} gap={{gap: 0, sm: 4}} flexDirection={{flexDirection: 'column', sm: 'row'}} flexWrap={'wrap'}>
+                <Box display={'flex'} gap={{ gap: 0, sm: 4 }} flexDirection={{ flexDirection: 'column', sm: 'row' }} flexWrap={'wrap'}>
                     <Link href="https://shopee.ph/sewmii" color="inherit" sx={{ textDecoration: 'none' }} display={'flex'} gap={1} marginTop={4}>
                         <Image src={"/icons/shopee.svg"} alt={'Shopee logo'} height={32} width={32} style={{ display: 'block' }} />
                         <Typography variant="h5" fontFamily={'Source Sans Regular'}>Shopee PH</Typography>

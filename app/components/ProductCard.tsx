@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'Source Sans Bold' }}>
                     {title}
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'var(--foreground)', fontFamily: 'Source Sans Regular' }}>
+                <Typography variant="body1" sx={{ color: 'var(--color-primary)', fontFamily: 'Source Sans Regular' }}>
                     {desc}
                 </Typography>
             </CardContent>
