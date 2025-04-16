@@ -6,7 +6,7 @@ import { TabPanel, TabContext } from '@mui/lab';
 import { useMediaQuery, useTheme } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
 import Image from 'next/image';
-import { infoIcon, measuringTapeIcon } from '@/public/data/images';
+import { measuringTapeIcon } from '@/public/data/images';
 
 const SizeGuideButton = styled('button')(({ theme }) => ({
     position: 'fixed',
