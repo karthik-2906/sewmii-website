@@ -10,6 +10,9 @@ interface Button3DProps {
     fontSize?: string;
     image?: ReactNode;
     padding?: string;
+    colorPrimary?: string;
+    colorSecondary?: string;
+    backgroundColor?: string;
 }
 
 export default function Button3D({
@@ -18,7 +21,10 @@ export default function Button3D({
     newTab = true,
     fontSize = '16px',
     image = null,
-    padding = '8px 24px'
+    padding = '8px 16px',
+    colorPrimary = 'var(--color-primary)',
+    colorSecondary = 'var(--color-secondary)',
+    backgroundColor = 'var(--background)'
 }: Button3DProps) {
     return (
         <Box
@@ -36,7 +42,7 @@ export default function Button3D({
                     left: '-4px',
                     right: '4px',
                     bottom: '-4px',
-                    backgroundColor: 'var(--calculator-3d-background)',
+                    backgroundColor: colorSecondary,
                     zIndex: 1
                 }}
             />
@@ -50,12 +56,12 @@ export default function Button3D({
                 alignItems="center"
                 gap="4px"
                 padding={padding}
-                color='var(--calculator-3d-background)'
+                color={colorPrimary}
                 sx={{
                     position: 'relative',
                     zIndex: 2,
-                    backgroundColor: "var(--background)",
-                    border: '3px solid var(--calculator-3d-background)',
+                    backgroundColor: backgroundColor,
+                    border: `3px solid ${colorSecondary}`,
                     transform: 'translate(0, 0)',
                     transition: 'all 0.3s ease',
                     '&:hover': {
@@ -67,7 +73,7 @@ export default function Button3D({
                     {image}
                     <Typography
                         variant="h6"
-                        color="var(--foreground)"
+                        color={colorPrimary}
                         fontSize={fontSize}
                         fontFamily={'Source Sans Regular'}
                     >

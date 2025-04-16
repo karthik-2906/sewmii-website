@@ -38,7 +38,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
                     lg: '48px 24px 32px 8px'
                 }}
                 sx={{
-                    backgroundColor: "var(--calculator-3d-background)",
+                    backgroundColor: "var(--color-secondary)",
                     height: { xs: '336px', sm: '304px' },
                     position: "relative",
                     maxWidth: 600,
@@ -52,8 +52,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
                     component={"div"}
                     onClick={handleOpenOverlay}
                     sx={{
-                        backgroundColor: "var(--calculator-background)",
-                        border: "3px solid var(--calculator-3d-background)",
+                        backgroundColor: "var(--background)",
+                        border: "3px solid var(--color-secondary)",
                         width: "100%",
                         height: { xs: '336px', sm: '304px' },
                         position: "absolute",
@@ -71,7 +71,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
                     }}
                 >
                     {quoteIcon}
-                    <Typography variant="h6" margin={'16px 0'} sx={{ fontFamily: "Source Sans Regular", color: 'var(--calculator-3d-background)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: { xs: 5, sm: 4 }, overflow: 'hidden' }}>{review}</Typography>
+                    <Typography variant="h6" margin={'16px 0'} sx={{ fontFamily: "Source Sans Regular", color: 'var(--color-secondary)', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: { xs: 5, sm: 4 }, overflow: 'hidden' }}>{review}</Typography>
                     <Typography variant="subtitle1" marginTop={'auto'} textAlign={'right'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>- {name}</Typography>
                 </Box>
             </Box>

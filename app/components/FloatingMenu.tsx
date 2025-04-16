@@ -50,7 +50,7 @@ export default function FloatingMenu() {
                         right: 0,
                         bottom: 0,
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        zIndex: 999,
+                        zIndex: 1000,
                         display: { xs: 'block', md: 'none' },
                     }}
                     onClick={toggleMenu}
@@ -63,7 +63,7 @@ export default function FloatingMenu() {
                     bottom: 24,
                     right: 24,
                     display: { xs: 'block', md: 'none' },
-                    zIndex: 1000,
+                    zIndex: expanded ? 1001 : 1000,
                 }}
             >
                 <Zoom in={expanded}>
