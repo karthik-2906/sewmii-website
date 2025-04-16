@@ -23,7 +23,7 @@ import {
     IoIosRemove,
     IoIosArrowDown
 } from "react-icons/io";
-import { etsyIcon, shopeeIcon, shopIcon } from '@/public/data/images';
+import { etsyIcon, shopeeIcon } from '@/public/data/images';
 import { socialLinks } from '@/public/data/socialLinks';
 import { productCategories, Product } from '@/public/data/productCategories';
 import Button3D from './Button3D';
