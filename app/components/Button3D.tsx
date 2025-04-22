@@ -29,6 +29,7 @@ export default function Button3D({
     return (
         <Box
             component="div"
+            className='button'
             sx={{
                 position: 'relative',
                 display: 'inline-block',

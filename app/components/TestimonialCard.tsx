@@ -32,6 +32,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
         <>
             <Box
                 component={"div"}
+                className='testimonial-card'
                 margin={{
                     margin: '48px 32px 32px 16px',
                     sm: '48px 32px 32px 0',
@@ -75,7 +76,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
                     <Typography variant="subtitle1" marginTop={'auto'} textAlign={'right'} sx={{ fontFamily: "Source Sans Regular", color: 'gray' }}>- {name}</Typography>
                 </Box>
             </Box>
-            <Modal open={isOverlayOpen} onClose={handleCloseOverlay} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Modal className='testimonial-card-modal' open={isOverlayOpen} onClose={handleCloseOverlay} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
                     <Box onClick={handleCloseOverlay} sx={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1 }} />
                     <Box component="img" src={image} alt="Testimonial" sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 2, maxWidth: { xs: '90%', sm: '600px' }, maxHeight: '90%', borderRadius: 4, boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }} />
