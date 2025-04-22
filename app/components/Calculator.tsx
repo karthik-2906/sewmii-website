@@ -198,6 +198,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
     return (
         <Box
             component={"div"}
+            className='calculator'
             margin={{ margin: "48px 32px 32px 16px", md: '48px 16px 32px 0' }}
             sx={{
                 backgroundColor: "var(--color-secondary)",

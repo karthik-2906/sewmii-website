@@ -58,6 +58,7 @@ export default function FloatingMenu() {
             )}
 
             <Box
+                className='mobile-floating-menu'
                 sx={{
                     position: "fixed",
                     bottom: 24,
