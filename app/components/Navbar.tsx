@@ -216,6 +216,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
     return (
         <Box
             ref={dropdownRef}
+            className='header-desktop-dropdown-menu'
             sx={{
                 display: { xs: 'none', md: 'block' },
                 position: 'fixed',
@@ -286,6 +287,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
 const Overlay = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => (
     <Box
+        className='header-desktop-overlay'
         sx={{
             position: 'fixed',
             top: 0,
@@ -404,6 +406,7 @@ export default function Navbar() {
                     alignItems={'center'}
                     maxWidth={'1248px'}
                     margin={'0 auto'}
+                    className='header-desktop'
                 >
                     <Link href='/' aria-label="Home">
                         <Image
@@ -465,6 +468,7 @@ export default function Navbar() {
                     justifyContent={'space-between'}
                     p={2}
                     alignItems={'center'}
+                    className='header-mobile'
                 >
                     <IoMdMenu
                         onClick={toggleDrawer(true)}

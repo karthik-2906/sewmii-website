@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { measuringTapeIcon } from '@/public/data/images';
 
 const SizeGuideButton = styled('button')(({ theme }) => ({
+    fontSize: 16,
     position: 'fixed',
     top: '40%',
     right: 0,
@@ -22,12 +23,12 @@ const SizeGuideButton = styled('button')(({ theme }) => ({
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     '&:hover': {
-        background: 'var(--color-primary)',
+        background: 'var(--color-secondary)',
         color: 'var(--background)',
     },
     [theme.breakpoints.down('md')]: {
         display: 'none',
-    },
+    }
 }));
 
 const SizeGuideDrawer = () => {
@@ -45,17 +46,18 @@ const SizeGuideDrawer = () => {
     };
 
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
         <>
             {/* Desktop Size Guide Button */}
-            <SizeGuideButton onClick={toggleDrawer(true)}>
+            <SizeGuideButton className='size-guide-btn-desktop' onClick={toggleDrawer(true)}>
                 Size Guide
             </SizeGuideButton>
 
             {/*  Mobile Size Guide Button */}
             <Box
+                className='size-guide-btn-mobile'
                 sx={{
                     position: "fixed",
                     bottom: 96,
@@ -78,7 +80,8 @@ const SizeGuideDrawer = () => {
             </Box>
 
             <Drawer
-                anchor= {isMobile? 'top': 'right'}
+            className='size-guide-btn-mobile-drawer'
+                anchor={isMobile ? 'top' : 'right'}
                 open={open}
                 onClose={toggleDrawer(false)}
                 transitionDuration={500}
@@ -96,7 +99,7 @@ const SizeGuideDrawer = () => {
                     alignItems="center"
                 >
                     <Typography variant="h6" fontFamily={'Source Sans Bold'} fontSize={'24px'}>Size Guide</Typography>
-                    <IconButton onClick={toggleDrawer(false)}>
+                    <IconButton onClick={toggleDrawer(false)} sx={{ padding: 0 }}>
                         <IoMdClose />
                     </IconButton>
                 </Box>
@@ -119,30 +122,29 @@ const SizeGuideDrawer = () => {
                         </Tabs>
                         <TabPanel value="1" keepMounted={true} sx={{ padding: 0, margin: { margin: '0', md: '0 auto' } }}>
                             <Image
-                                src='/images/sewmii-size-guide.jpg'
-                                alt='size-guide'
-                                width={450}
-                                height={450}
+                                src='/images/sewmii-size-guide-in.jpg'
+                                alt='size-guide-inches'
+                                width={420}
+                                height={420}
                                 loading='eager'
                                 style={{
                                     width: '100%',
-                                    borderRight: '1px solid black',
-                                    height: 'auto'
+                                    height: 'auto',
+                                    border: '2px solid var(--color-secondary)'
                                 }}
                             />
                         </TabPanel>
                         <TabPanel value="2" keepMounted={true} sx={{ padding: 0, margin: { margin: '0', md: '0 auto' } }}>
-                            <Typography variant='subtitle1' sx={{ fontFamily: 'Source Sans Regular', fontSize: '24px', marginBottom: '16px' }}>Coming soon</Typography>
                             <Image
-                                src='/images/sewmii-size-guide.jpg'
-                                alt='size-guide'
-                                width={450}
-                                height={450}
+                                src='/images/sewmii-size-guide-cm.jpg'
+                                alt='size-guide-cm'
+                                width={420}
+                                height={420}
                                 loading='eager'
                                 style={{
                                     width: '100%',
-                                    borderRight: '1px solid black',
-                                    height: 'auto'
+                                    height: 'auto',
+                                    border: '2px solid var(--color-secondary)'
                                 }}
                             />
                         </TabPanel>
