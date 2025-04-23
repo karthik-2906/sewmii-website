@@ -10,7 +10,6 @@ import TabContext from "@mui/lab/TabContext";
 import Typography from "@mui/material/Typography";
 import ProductCard from "@/app/components/ProductCard";
 import { ProductCardInfo, womensProductCategories } from "@/public/data/productCategories";
-import Banner from "@/app/components/Banner";
 
 type ProductData = {
     corsets: ProductCardInfo[];

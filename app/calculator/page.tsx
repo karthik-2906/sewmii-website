@@ -8,7 +8,6 @@ import React from "react";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import { useMediaQuery, useTheme } from "@mui/material";
-import Banner from "../components/Banner";
 
 export default function Home() {
 
