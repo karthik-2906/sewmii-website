@@ -20,6 +20,7 @@ const SizeGuideButton = styled('button')(({ theme }) => ({
     color: 'var(--color-primary)',
     padding: '10px 20px',
     border: '3px solid var(--color-secondary)',
+    borderRadius: 4,
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     '&:hover': {
@@ -80,7 +81,7 @@ const SizeGuideDrawer = () => {
             </Box>
 
             <Drawer
-            className='size-guide-btn-mobile-drawer'
+                className='size-guide-btn-mobile-drawer'
                 anchor={isMobile ? 'top' : 'right'}
                 open={open}
                 onClose={toggleDrawer(false)}
@@ -90,6 +91,9 @@ const SizeGuideDrawer = () => {
                         width: 'auto',
                         maxWidth: '100vw',
                         padding: 2,
+                        borderTopLeftRadius: isMobile? 0 : 12,
+                        borderBottomLeftRadius: 12,
+                        borderBottomRightRadius: isMobile? 12 : 0
                     },
                 }}
             >
@@ -130,7 +134,8 @@ const SizeGuideDrawer = () => {
                                 style={{
                                     width: '100%',
                                     height: 'auto',
-                                    border: '2px solid var(--color-secondary)'
+                                    border: '2px solid var(--color-secondary)',
+                                    borderRadius: 4
                                 }}
                             />
                         </TabPanel>
@@ -144,7 +149,8 @@ const SizeGuideDrawer = () => {
                                 style={{
                                     width: '100%',
                                     height: 'auto',
-                                    border: '2px solid var(--color-secondary)'
+                                    border: '2px solid var(--color-secondary)',
+                                    borderRadius: 4
                                 }}
                             />
                         </TabPanel>

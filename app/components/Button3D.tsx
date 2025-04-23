@@ -44,7 +44,8 @@ export default function Button3D({
                     right: '4px',
                     bottom: '-4px',
                     backgroundColor: colorSecondary,
-                    zIndex: 1
+                    zIndex: 1,
+                    borderRadius: 1
                 }}
             />
 
@@ -63,6 +64,7 @@ export default function Button3D({
                     zIndex: 2,
                     backgroundColor: backgroundColor,
                     border: `3px solid ${colorSecondary}`,
+                    borderRadius: 1,
                     transform: 'translate(0, 0)',
                     transition: 'all 0.3s ease',
                     '&:hover': {

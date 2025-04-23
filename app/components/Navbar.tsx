@@ -173,7 +173,7 @@ const DrawerContent = ({
         </List>
 
         {/* Social Links */}
-        <Box position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)' }}>
+        <Box position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)', borderBottomRightRadius: 12 }}>
             <Divider />
             <Box display={'flex'} padding={2} gap={2}>
                 {socialLinks.map((socialLink, index) => (
@@ -228,6 +228,8 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 zIndex: 9,
                 width: '100%',
                 padding: '32px 0',
+                borderBottomLeftRadius: 12,
+                borderBottomRightRadius: 12
             }}
         >
             <Box
@@ -278,7 +280,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     height={400}
                     width={400}
                     loading='eager'
-                    style={{ height: 'auto', width: '400px' }}
+                    style={{ height: 'auto', width: '400px', borderRadius: 4 }}
                 />
             </Box>
         </Box>
@@ -381,6 +383,8 @@ export default function Navbar() {
     const drawerPaperProps: Partial<PaperProps> = {
         sx: {
             backgroundColor: 'var(--background)',
+            borderTopRightRadius: 12,
+            borderBottomRightRadius: 12
         },
     };
 
@@ -457,7 +461,7 @@ export default function Navbar() {
                         <NavLink href="/" text="Services" />
                     </Box>
                     <Box component={'div'} display={'flex'} gap={2} alignItems={'center'}>
-                        <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={etsyIcon}>Shop Now</Button3D>
+                        <Button3D href='https://www.etsy.com/shop/sewmii' fontSize='12px' image={etsyIcon}>Shop Now</Button3D>
                         <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopeeIcon}>Shop Now</Button3D>
                     </Box>
                 </Box>
