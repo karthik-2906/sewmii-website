@@ -75,7 +75,7 @@ export default function FloatingMenu() {
                         marginBottom: 2
                     }}>
                         <ShopLink
-                            href="https://www.etsy.com/shop/Sewmii"
+                            href="https://www.etsy.com/shop/sewmii"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
