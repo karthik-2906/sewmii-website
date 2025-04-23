@@ -202,8 +202,9 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
             margin={{ margin: "48px 32px 32px 16px", md: '48px 16px 32px 0' }}
             sx={{
                 backgroundColor: "var(--color-secondary)",
-                height: {height},
+                height: { height },
                 position: "relative",
+                borderRadius: 1
             }}
         >
             <Box
@@ -211,6 +212,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                 sx={{
                     backgroundColor: "var(--background)",
                     border: "3px solid var(--color-secondary)",
+                    borderRadius: 1,
                     width: "100%",
                     position: "absolute",
                     left: "16px",
@@ -260,6 +262,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             height: 48,
                                             position: "relative",
                                             marginTop: "12px",
+                                            borderRadius: 1
                                         }}
                                     >
                                         <TextField
@@ -310,6 +313,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             height: 48,
                                             position: "relative",
                                             marginTop: "12px",
+                                            borderRadius: 1
                                         }}
                                     >
                                         <TextField

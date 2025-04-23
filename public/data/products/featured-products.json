@@ -4,18 +4,22 @@
         "title": "Women's Corset 1",
         "desc": "A basic corset pattern for Women, available in multiple sizes.",
         "shopeeLink": "#1",
-        "etsyLink": "https://www.etsy.com/shop/Sewmii",
+        "etsyLink": "https://www.etsy.com/shop/sewmii",
         "carouselImages": [
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern-2.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern-3.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-temp-pattern-4.jpg",
                 "alt": "temp-alt"
             }
         ]
@@ -28,15 +32,15 @@
         "etsyLink": "#",
         "carouselImages": [
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             }
         ]
@@ -49,15 +53,15 @@
         "etsyLink": "#",
         "carouselImages": [
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
+                "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             }
         ]

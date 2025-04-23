@@ -21,8 +21,18 @@ export default function Home() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Box margin={{ margin: '96px 0 0', md: '120px 16px 0', lg: '120px auto 0' }} maxWidth="1248px">
-            <Box component={'div'}>
+        <Box
+            component="div"
+            className="main-container"
+            padding={{ xs: '62px 0 0', md: '94px 0 0' }}
+        >
+
+            {/* Calculator */}
+            <Box
+                className='calculator-container'
+                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '48px auto 0' }}
+                maxWidth="1248px"
+            >
                 <TabContext value={value}>
                     <Tabs
                         value={value}
