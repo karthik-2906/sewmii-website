@@ -84,8 +84,8 @@ export default function HomeClient({
                     gap={2}
                     sx={{
                         gridTemplateColumns: {
-                            xs: 'repeat(1, 1fr)',
-                            sm: 'repeat(2, 1fr)',
+                            xs: 'repeat(2, 1fr)',
+                            // sm: 'repeat(2, 1fr)',
                             md: 'repeat(3, 1fr)',
                             lg: 'repeat(5, 1fr)',
                         },

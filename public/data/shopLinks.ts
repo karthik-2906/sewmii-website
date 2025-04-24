@@ -2,7 +2,7 @@ export const shopLinks = [
   {
     title: 'Etsy',
     shopName: 'sewmii',
-    shopDesc: 'Buy Digital Patterns',
+    shopDesc: 'Digital Patterns',
     link: 'https://www.etsy.com/shop/sewmii',
     img: '/icons/etsy-color.svg',
     imageAlt: 'etsy-icon',
@@ -13,7 +13,7 @@ export const shopLinks = [
   {
     title: 'Shopee PH',
     shopName: 'sewmii',
-    shopDesc: 'Buy Physical Patterns',
+    shopDesc: 'Physical Patterns',
     link: 'https://shopee.ph/sewmii',
     img: '/icons/shopee-color.svg',
     imageAlt: 'shopee-icon',
@@ -24,7 +24,7 @@ export const shopLinks = [
   {
     title: 'Shopee SG',
     shopName: 'sewmiiro.sg',
-    shopDesc: 'Buy Physical Patterns',
+    shopDesc: 'Physical Patterns',
     link: 'https://shopee.sg/sewmiiro.sg',
     img: '/icons/shopee-color.svg',
     imageAlt: 'shopee-icon',
@@ -35,7 +35,7 @@ export const shopLinks = [
   {
     title: 'Shopee MY',
     shopName: 'sewmiina.my',
-    shopDesc: 'Buy Physical Patterns',
+    shopDesc: 'Physical Patterns',
     link: 'https://shopee.com.my/sewmiina.my',
     img: '/icons/shopee-color.svg',
     imageAlt: 'shopee-icon',
@@ -46,7 +46,7 @@ export const shopLinks = [
   {
     title: 'TikTok',
     shopName: 'sewmii',
-    shopDesc: 'Buy Physical Patterns',
+    shopDesc: 'Physical Patterns',
     link: 'https://www.tiktok.com/@sewmii.studio',
     img: '/icons/tiktok.svg',
     imageAlt: 'etsy-icon',

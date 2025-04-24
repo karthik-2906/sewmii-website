@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
     };
 
     return (
-        <Card className='product-card' sx={{ width: '100%', borderRadius: 1, border: '3px solid var(--color-secondary)', backgroundColor: 'var(--background)' }}>
+        <Card className='product-card' sx={{ width: '100%', borderRadius: 1, border: '3px solid var(--color-secondary)', backgroundColor: 'var(--background)', boxShadow: 'none' }}>
             {carouselImages.length > 0 ? <Box component={'div'} className="slider-container" marginBottom={3}>
                 <Slider {...settings}>
                     {carouselImages.map((images, index) => (
