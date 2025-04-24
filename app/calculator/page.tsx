@@ -30,7 +30,7 @@ export default function Home() {
             {/* Calculator */}
             <Box
                 className='calculator-container'
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '48px auto 0' }}
+                margin={{ xs: '32px 0 0', md: '48px 0 0', lg: '48px auto 0' }}
                 maxWidth="1248px"
             >
                 <TabContext value={value}>
