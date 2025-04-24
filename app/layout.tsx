@@ -11,14 +11,14 @@ const desc = "Sewmii Pattern Studio - Love sewing but not patternmaking? Our pat
 export const metadata: Metadata = {
     title: "sewmii",
     description: `${desc}`,
-    keywords: "sewing patterns, printed sewing patterns, pattern maker Philippines, patternmaker, sewing for beginners, garment business sewing, DIY clothing, philippines, manila, buy sewing patterns online, sewing patterns for beginners, clothing sewing patterns, fashion design patterns, sewing patterns Manila, Filipino pattern maker, DIY fashion patterns",
+    keywords: "sewing patterns, printed sewing patterns, pattern maker Philippines, patternmaker, sewing for beginners, garment business sewing, DIY clothing, philippines, manila, buy sewing patterns online, sewing patterns for beginners, clothing sewing patterns, fashion design patterns, sewing patterns Manila, Filipino pattern maker, DIY fashion patterns, corset pattern, corset sewing pattern, DIY corset",
     openGraph: {
         title: 'sewmii',
         description: `${desc}`,
     },
     icons: {
-        icon: "/logos/sewmii-logo-square-light.png",
-        apple: "/logos/sewmii-logo-square-light.png",
+        icon: "/favicon.ico",
+        apple: "/favicon.ico",
     },
 };
 
