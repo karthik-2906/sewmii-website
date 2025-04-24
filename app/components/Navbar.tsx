@@ -23,7 +23,7 @@ import {
     IoIosRemove,
     IoIosArrowDown
 } from "react-icons/io";
-import { etsyIcon, shopeeIcon } from '@/public/data/images';
+import { etsyIcon, shopeeColorIcon } from '@/public/data/images';
 import { socialLinks } from '@/public/data/socialLinks';
 import { productCategories, Product } from '@/public/data/productCategories';
 import Button3D from './Button3D';
@@ -462,7 +462,7 @@ export default function Navbar() {
                     </Box>
                     <Box component={'div'} display={'flex'} gap={2} alignItems={'center'}>
                         <Button3D href='https://www.etsy.com/shop/sewmii' fontSize='12px' image={etsyIcon}>Shop Now</Button3D>
-                        <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopeeIcon}>Shop Now</Button3D>
+                        <Button3D href='https://shopee.ph/sewmii' fontSize='12px' image={shopeeColorIcon}>Shop Now</Button3D>
                     </Box>
                 </Box>
 
