@@ -29,32 +29,40 @@ export default function ShopCard({
             className="shop-card"
             border="3px solid var(--color-secondary)"
             borderRadius={1}
-            padding={2}
+            padding={{ xs: 1.5, sm: 2 }}
         >
             <Box display="flex" gap={1} alignItems="center">
                 {image && (
-                    <Image
-                        src={image}
-                        alt={imageAlt}
-                        height={32}
-                        width={32}
-                        style={{
-                            // border: "3px solid var(--color-secondary)",
-                            borderRadius: 4,
-                            // padding: image === '/icons/shopee-color.svg' ? 2 : 0
+                    <Box
+                        sx={{
+                            width: { xs: 20, sm: 32 },
+                            height: { xs: 20, sm: 32 },
                         }}
-                    />
+                    >
+                        <Image
+                            src={image}
+                            alt={imageAlt}
+                            width={32}
+                            height={32}
+                            style={{ width: '100%', height: '100%', borderRadius: 4 }}
+                        />
+                    </Box>
                 )}
-                <Typography variant="h5" fontFamily="Source Sans Bold" fontWeight={700} textTransform={'uppercase'}>
+
+                <Typography variant="h5" fontFamily="Source Sans Bold" fontWeight={700} textTransform={'uppercase'} fontSize={{ xs: 18, sm: 24 }}>
                     {title}
                 </Typography>
             </Box>
 
-            <Typography variant="h6" fontFamily="Source Sans Bold" mt={1}>
+            <Typography variant="h6" fontFamily="Source Sans Bold" mt={1} fontSize={{ xs: 16, sm: 20 }}>
                 {shopName}
             </Typography>
 
-            <Typography variant="subtitle1" fontFamily="Source Sans Bold">
+            <Typography
+                variant="subtitle1"
+                fontFamily="Source Sans Bold"
+                fontSize={{ xs: 14, sm: 16 }}
+            >
                 {shopDesc}
             </Typography>
 
@@ -72,17 +80,25 @@ export default function ShopCard({
                     }}
                 >
                     {locationImage && (
-                        <Image
-                            src={locationImage}
-                            alt={locationImageAlt}
-                            height={24}
-                            width={24}
-                        />
+                        <Box
+                            sx={{
+                                width: { xs: 20, sm: 24 },
+                                height: { xs: 20, sm: 24 },
+                            }}
+                        >
+                            <Image
+                                src={locationImage}
+                                alt={locationImageAlt}
+                                height={24}
+                                width={24}
+                                style={{ width: '100%', height: '100%' }}
+                            />
+                        </Box>
                     )}
                     <Typography
                         variant="subtitle2"
                         fontFamily="Source Sans Bold"
-                        fontSize="1rem"
+                        fontSize={{ xs: 14, sm: 16 }}
                     >
                         {location}
                     </Typography>
@@ -98,7 +114,7 @@ export default function ShopCard({
                     color: "var(--color-primary)",
                     fontFamily: "Source Sans Bold",
                     fontWeight: 700,
-                    fontSize: "1.25rem",
+                    fontSize: { xs: 16, sm: 20 },
                     border: "3px solid var(--color-secondary)",
                     borderRadius: 1,
                     padding: "4px 0",
