@@ -49,7 +49,7 @@ export default function ShopCard({
                     </Box>
                 )}
 
-                <Typography variant="h5" fontFamily="Source Sans Bold" fontWeight={700} textTransform={'uppercase'} fontSize={{ xs: 18, sm: 24 }}>
+                <Typography variant="h5" fontFamily="Source Sans Bold" fontWeight={700} fontSize={{ xs: 18, sm: 24 }}>
                     {title}
                 </Typography>
             </Box>

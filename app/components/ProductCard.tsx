@@ -8,7 +8,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { etsyIcon, shopeeIcon } from '@/public/data/images';
+import { etsyIcon, shopeeColorIcon } from '@/public/data/images';
 import Button3D from './Button3D';
 
 interface CarouselImage {
@@ -73,7 +73,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
                     </Button3D>
                 )}
                 {shopeeLink && (
-                    <Button3D href={shopeeLink} image={shopeeIcon}>
+                    <Button3D href={shopeeLink} image={shopeeColorIcon}>
                         Buy Now
                     </Button3D>
                 )}

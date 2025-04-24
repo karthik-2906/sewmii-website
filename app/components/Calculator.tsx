@@ -221,8 +221,8 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                     color: "var(--color-secondary)",
                 }}
             >
-                <Box component={"div"} display={"flex"} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
-                    <Typography variant="h4" sx={{ fontFamily: "Source Sans Bold" }}>
+                <Box component={"div"} display={"flex"} flexDirection={{xs: 'column', sm: 'row'}} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
+                    <Typography variant="h4" sx={{ fontFamily: "Source Sans Bold" }} fontSize={{ xs: 28, sm: 34 }}>
                         {title}
                     </Typography>
                     <Box component={"div"} display={"flex"} alignItems={"center"}>

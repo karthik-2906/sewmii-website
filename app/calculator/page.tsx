@@ -58,10 +58,10 @@ export default function Home() {
                         <Tab label="Skirt" value="3" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
                         <Tab label="Pant" value="4" sx={{ fontFamily: 'Source Sans Bold', fontSize: '1rem', width: 'fit-content' }} />
                     </Tabs>
-                    <TabPanel value="1" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Torso Calculator" height={isMobile ? "1897.42px" : "1843.42px"} variant="torso" /></TabPanel>
-                    <TabPanel value="2" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Sleeve Calculator" height={isMobile ? "723.783px" : "669.783px"} variant="sleeve" /></TabPanel>
-                    <TabPanel value="3" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Skirt Calculator" height={isMobile ? "444.283px" : "390.283px"} variant="skirt" /></TabPanel>
-                    <TabPanel value="4" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Pant Calculator" height={isMobile ? "816.95px" : "762.95px"} variant="pant" /></TabPanel>
+                    <TabPanel value="1" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Torso Calculator" height={isMobile ? "1890.2px" : "1843.42px"} variant="torso" /></TabPanel>
+                    <TabPanel value="2" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Sleeve Calculator" height={isMobile ? "716.383px" : "669.783px"} variant="sleeve" /></TabPanel>
+                    <TabPanel value="3" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Skirt Calculator" height={isMobile ? "436.883px" : "390.283px"} variant="skirt" /></TabPanel>
+                    <TabPanel value="4" keepMounted={true} sx={{ padding: 0, width: { width: '100%', md: '600px' }, margin: { margin: '0', md: '0 auto' } }}><Calculator title="Pant Calculator" height={isMobile ? "809.55px" : "762.95px"} variant="pant" /></TabPanel>
                 </TabContext>
             </Box>
         </Box>
