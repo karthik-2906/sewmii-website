@@ -2,7 +2,7 @@
 
 import { Fab, Zoom, ButtonBase, ButtonBaseProps, Box } from "@mui/material";
 import { useState } from "react";
-import { etsyIcon, shopIcon, shopeeIcon } from "@/public/data/images";
+import { etsyIcon, shopIcon, shopeeColorIcon } from "@/public/data/images";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 
@@ -86,7 +86,7 @@ export default function FloatingMenu() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {shopeeIcon}
+                            {shopeeColorIcon}
                         </ShopLink>
                     </Box>
                 </Zoom>
