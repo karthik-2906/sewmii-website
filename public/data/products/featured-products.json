@@ -7,6 +7,18 @@
         "etsyLink": "https://www.etsy.com/shop/sewmii",
         "carouselImages": [
             {
+                "src": "/images/sewmii-temp-pattern-5.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-temp-pattern-6.jpg",
+                "alt": "temp-alt"
+            },
+            {
+                "src": "/images/sewmii-temp-pattern-7.jpg",
+                "alt": "temp-alt"
+            },
+            {
                 "src": "/images/sewmii-temp-pattern.jpg",
                 "alt": "temp-alt"
             },
