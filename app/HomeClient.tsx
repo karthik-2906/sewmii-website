@@ -70,7 +70,7 @@ export default function HomeClient({
         >
 
             {/* Banner */}
-            <Banner image="/images/sewmii-temp-banner.jpg" />
+            <Banner image="/images/sewmii-temp-banner-2.jpg" />
 
             {/* Shop links */}
             <Box
