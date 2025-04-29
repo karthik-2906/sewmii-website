@@ -210,7 +210,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
             <Box
                 component={"div"}
                 sx={{
-                    backgroundColor: "var(--background)",
+                    backgroundColor: "var(--component-background)",
                     border: "3px solid var(--color-secondary)",
                     borderRadius: 1,
                     width: "100%",
@@ -271,7 +271,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             variant="outlined"
                                             disabled={inputs.hidden}
                                             sx={{
-                                                backgroundColor: "var(--background)",
+                                                backgroundColor: "var(--component-background)",
                                                 position: "absolute",
                                                 left: "8px",
                                                 bottom: "8px",
@@ -322,7 +322,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title, height, variant }) => {
                                             variant="outlined"
                                             disabled={true}
                                             sx={{
-                                                backgroundColor: "var(--background)",
+                                                backgroundColor: "var(--component-background)",
                                                 position: "absolute",
                                                 left: "8px",
                                                 bottom: "8px",

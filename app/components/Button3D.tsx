@@ -24,7 +24,7 @@ export default function Button3D({
     padding = '8px 16px',
     colorPrimary = 'var(--color-primary)',
     colorSecondary = 'var(--color-secondary)',
-    backgroundColor = 'var(--background)'
+    backgroundColor = 'var(--component-background)'
 }: Button3DProps) {
     return (
         <Box

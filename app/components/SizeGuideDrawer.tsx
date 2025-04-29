@@ -16,7 +16,7 @@ const SizeGuideButton = styled('button')(({ theme }) => ({
     transform: 'rotate(-90deg) translateY(-50%)',
     transformOrigin: 'right center',
     zIndex: 2,
-    background: 'var(--background)',
+    background: 'var(--component-background)',
     color: 'var(--color-primary)',
     padding: '10px 20px',
     border: '3px solid var(--color-secondary)',
@@ -25,7 +25,7 @@ const SizeGuideButton = styled('button')(({ theme }) => ({
     transition: 'all 0.3s ease',
     '&:hover': {
         background: 'var(--color-secondary)',
-        color: 'var(--background)',
+        color: 'var(--component-background)',
     },
     [theme.breakpoints.down('md')]: {
         display: 'none',
@@ -70,9 +70,9 @@ const SizeGuideDrawer = () => {
 
                 <Fab
                     sx={{
-                        backgroundColor: 'var(--background)',
+                        backgroundColor: 'var(--component-background)',
                         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-                        '&:hover': { backgroundColor: 'var(--background)' }
+                        '&:hover': { backgroundColor: 'var(--component-background)' }
                     }}
                     onClick={toggleDrawer(true)}
                 >
@@ -81,13 +81,14 @@ const SizeGuideDrawer = () => {
             </Box>
 
             <Drawer
-                className='size-guide-btn-mobile-drawer'
+                className='size-guide-btn-drawer'
                 anchor={isMobile ? 'top' : 'right'}
                 open={open}
                 onClose={toggleDrawer(false)}
                 transitionDuration={500}
                 PaperProps={{
                     sx: {
+                        background: 'var(--page-background)',
                         width: 'auto',
                         maxWidth: '100vw',
                         padding: 2,

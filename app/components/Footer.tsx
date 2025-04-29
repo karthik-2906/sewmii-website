@@ -20,12 +20,9 @@ export default function Footer() {
             component="footer"
             className="footer"
             marginTop={{ xs: '32px', md: '48px', lg: '64px' }}
-            borderTop="2px dashed #DEDEDE"
+            borderTop='2px solid var(--color-secondary)'
             display="flex"
             flexDirection="column"
-            sx={{
-                backgroundColor: 'var(--background)'
-            }}
         >
 
             {/* Social Icons */}
