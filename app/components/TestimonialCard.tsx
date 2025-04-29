@@ -54,7 +54,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, review, image }
                     component={"div"}
                     onClick={handleOpenOverlay}
                     sx={{
-                        backgroundColor: "var(--background)",
+                        backgroundColor: "var(--component-background)",
                         border: "3px solid var(--color-secondary)",
                         borderRadius: 1,
                         width: "100%",
