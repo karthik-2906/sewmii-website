@@ -7,10 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import TestimonialCard from "./components/TestimonialCard";
 import Banner from "./components/Banner";
 import { ProductCardInfo } from "@/public/data/productCategories";
-import { shopLinks } from "@/public/data/shopLinks";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "./components/ProductCard";
-import ShopCard from "./components/ShopCard";
 
 type Testimonial = {
     name: string;
