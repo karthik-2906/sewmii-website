@@ -30,6 +30,9 @@ export default function ShopCard({
             border="3px solid var(--color-secondary)"
             borderRadius={1}
             padding={{ xs: 1.5, sm: 2 }}
+            sx={{
+                background: "var(--component-background)"
+            }}
         >
             <Box display="flex" gap={1} alignItems="center">
                 {image && (
@@ -71,7 +74,7 @@ export default function ShopCard({
                     display="inline-flex"
                     gap={1}
                     sx={{
-                        backgroundColor: '#E9DFC3',
+                        backgroundColor: 'var(--color-accent)',
                         border: "3px solid var(--color-secondary)",
                         borderRadius: 1,
                         padding: "4px 8px",

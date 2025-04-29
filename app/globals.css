@@ -1,8 +1,9 @@
 :root {
-  --background: #FFFFFF;
+  --page-background: #EFEEEA;
+  --component-background: #FFFFFF;
   --color-primary: #171717;
   --color-secondary: #423f3f;
-  --color-shopee: #EE4D2D;
+  --color-accent: #E9DFC3;
 }
 
 @font-face {
@@ -34,7 +35,7 @@ body {
 
 body {
   color: var(--color-primary);
-  background: var(--background);
+  background: var(--page-background);
   font-family: 'Source Sans Regular';
 }
 
@@ -63,7 +64,7 @@ a {
 
 .MuiSwitch-root .MuiSwitch-thumb {
   border-radius: 0 !important;
-  color: var(--background) !important;
+  color: var(--component-background) !important;
   width: 16px !important;
   height: 16px !important;
 }
@@ -123,6 +124,7 @@ a {
 .MuiTabs-scroller .Mui-selected {
   color: var(--color-secondary) !important;
   border: 2px dashed var(--color-secondary) !important;
+  background: var(--component-background) !important;
 }
 
 /*
@@ -131,7 +133,7 @@ a {
 
 .slick-dots li button:before {
   content: '' !important;
-  background-color: var(--background);
+  background-color: var(--component-background);
   border-radius: 50%;
   border: 2px solid var(--color-primary);
   opacity: 1 !important;
@@ -141,4 +143,39 @@ a {
 
 .slick-dots li.slick-active button:before {
   background-color: var(--color-primary);
+}
+
+.slider-container .slick-slide>div>div:focus {
+  outline: none;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1 !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: " " !important;
+}
+
+.slick-prev {
+  background: url(../public/icons/arrow-left.svg) 50% !important;
+}
+
+.slick-next {
+  background: url(../public/icons/arrow-right.svg) 50% !important;
+}
+
+.product-card .slick-prev {
+  left: 0 !important;
+}
+
+.product-card .slick-next {
+  right: 0 !important;
+}
+
+.testimonial-cards-container .slick-prev,
+.testimonial-cards-container .slick-next {
+  top: 45% !important;
 }

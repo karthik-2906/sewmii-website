@@ -126,9 +126,9 @@ const DrawerContent = ({
                                 pl: 4,
                                 display: 'flex',
                                 justifyContent: 'space-between',
-                                backgroundColor: '#F2F2F2',
-                                "&:hover": { backgroundColor: "#F2F2F2" },
-                                "&:active": { backgroundColor: "#F2F2F2" }
+                                backgroundColor: 'var(--page-background)',
+                                "&:hover": { backgroundColor: "var(--page-background)" },
+                                "&:active": { backgroundColor: "var(--page-background)" }
                             }}
                         >
                             <Link
@@ -166,14 +166,14 @@ const DrawerContent = ({
                 "&:hover": { backgroundColor: "transparent" },
                 "&:active": { backgroundColor: "transparent" }
             }}>
-                <Link href="/" underline='none' color='inherit' width='100%'>
+                <Link href="/services" underline='none' color='inherit' width='100%'>
                     <ListItemText disableTypography primary="Services" />
                 </Link>
             </ListItemButton>
         </List>
 
         {/* Social Links */}
-        <Box position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--background)', borderBottomRightRadius: 12 }}>
+        <Box position={'fixed'} bottom={'0'} width={'75vw'} sx={{ backgroundColor: 'var(--page-background)', borderBottomRightRadius: 12 }}>
             <Divider />
             <Box display={'flex'} padding={2} gap={2}>
                 {socialLinks.map((socialLink, index) => (
@@ -224,7 +224,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 transition: '500ms',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                backgroundColor: 'var(--background)',
+                backgroundColor: 'var(--page-background)',
                 zIndex: 9,
                 width: '100%',
                 padding: '32px 0',
@@ -382,7 +382,7 @@ export default function Navbar() {
 
     const drawerPaperProps: Partial<PaperProps> = {
         sx: {
-            backgroundColor: 'var(--background)',
+            backgroundColor: 'var(--page-background)',
             borderTopRightRadius: 12,
             borderBottomRightRadius: 12
         },
@@ -395,8 +395,8 @@ export default function Navbar() {
                 width: '100%',
                 top: 0,
                 zIndex: 10,
-                backgroundColor: 'var(--background)',
-                borderBottom: '2px dashed #DEDEDE',
+                backgroundColor: 'var(--page-background)',
+                borderBottom: '2px solid var(--color-secondary)',
                 transform: isMobile ? (isVisible ? 'translateY(0)' : 'translateY(-100%)') : 'translateY(0)',
                 transition: 'transform 0.3s ease-in-out',
             }}>
@@ -458,7 +458,7 @@ export default function Navbar() {
                         </Button>
 
                         <NavLink href="/calculator" text="Calculator" />
-                        <NavLink href="/" text="Services" />
+                        <NavLink href="/services" text="Services" />
                     </Box>
                     <Box component={'div'} display={'flex'} gap={2} alignItems={'center'}>
                         <Button3D href='https://www.etsy.com/shop/sewmii' fontSize='12px' image={etsyIcon}>Shop Now</Button3D>

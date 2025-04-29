@@ -25,7 +25,7 @@ const ShopLink = ({ href, target, rel, children, ...props }: ShopLinkProps) => (
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'var(--background)',
+            backgroundColor: 'var(--component-background)',
             boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
             overflow: 'hidden',
         }}
@@ -93,9 +93,9 @@ export default function FloatingMenu() {
 
                 <Fab
                     sx={{
-                        backgroundColor: 'var(--background)',
+                        backgroundColor: 'var(--component-background)',
                         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-                        '&:hover': { backgroundColor: 'var(--background)' }
+                        '&:hover': { backgroundColor: 'var(--component-background)' }
                     }}
                     onClick={toggleMenu}
                 >
