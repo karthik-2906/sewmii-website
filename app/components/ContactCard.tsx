@@ -74,7 +74,7 @@ export default function ContactCard({
                         justifyContent: 'end'
                     }}
                     >
-                        <Typography variant="subtitle2" fontFamily="Source Sans Regular" fontSize={10}>@{profileName}</Typography>
+                        <Typography variant="subtitle2" fontFamily="Source Sans Regular" fontSize={10} color="var(--color-primary)">@{profileName}</Typography>
                     </Box>
                 </Box>
                 <Typography variant="subtitle2" fontFamily='Source Sans Regular' mt={2}>

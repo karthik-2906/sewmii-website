@@ -15,7 +15,7 @@ export default function Home() {
         >
 
             {/* Banner */}
-            <Banner image="/images/sewmii-temp-banner.jpg" />
+            <Banner image="/images/banner shadow test img.png" imageMobile="/images/banner shadow test img mobile.png" />
 
             {/* Services Intro */}
             <Box

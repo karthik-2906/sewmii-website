@@ -9,6 +9,7 @@ import Banner from "./components/Banner";
 import { ProductCardInfo } from "@/public/data/productCategories";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "./components/ProductCard";
+// import Image from "next/image";
 
 type Testimonial = {
     name: string;
@@ -65,11 +66,10 @@ export default function HomeClient({
             className="main-container"
             padding={{ xs: '62px 0 0', md: '94px 0 0' }}
         >
-
             {/* Banner */}
-            <Banner image="/images/sewmii-temp-banner-2.jpg" />
+            <Banner image="/images/banner shadow test img.png" imageMobile="/images/banner shadow test img mobile.png" />
 
-            {/* Shop links */}
+            {/* Intro */}
             <Box
                 margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
@@ -77,6 +77,36 @@ export default function HomeClient({
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Under Development</Typography>
                 <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={'1.25rem'} marginTop={2} marginBottom={2}>The website is under development and certain links will not work</Typography>
             </Box>
+
+            {/* Services Teaser */}
+            {/* <Box
+                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                maxWidth="1248px"
+                display="flex"
+                justifyContent="space-between"
+                gap={4}
+            >
+                <Box
+                    position="relative"
+                    flex="1"
+                    width="100%"
+                    sx={{
+                        aspectRatio: 1
+                    }}
+                >
+                    <Image
+                        src="/images/teaser-img.jpg"
+                        alt="services-teaser-image"
+                        fill
+                        style={{ objectFit: 'cover', borderRadius: 16 }}
+                    />
+                </Box>
+
+                <Box flex="1" padding={4}>
+                    <Typography variant="h2" fontFamily={'Source Sans Regular'}>Our Services</Typography>
+                    <Typography variant="subtitle1" fontFamily={'Source Sans Regular'}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
+                </Box>
+            </Box> */}
 
             {/* Featured Products */}
             <Box
