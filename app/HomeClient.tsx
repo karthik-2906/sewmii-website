@@ -9,7 +9,7 @@ import Banner from "./components/Banner";
 import { ProductCardInfo } from "@/public/data/productCategories";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "./components/ProductCard";
-import Image from "next/image";
+// import Image from "next/image";
 
 type Testimonial = {
     name: string;
