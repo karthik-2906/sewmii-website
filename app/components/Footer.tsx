@@ -77,7 +77,6 @@ export default function Footer() {
                 ))}
             </Box>
 
-
             {/* Navigation Links & Copyright */}
             <Box
                 display="flex"
@@ -147,6 +146,12 @@ export default function Footer() {
                     />
                 </Link>
             </Box>
+
+            {/* Website Credit */}
+            <Typography variant="subtitle2" textAlign="center" mb={2} fontFamily={'Source Sans Regular'} color={'gray'}>
+                Website created by{' '}
+                <Link href="https://www.karthiksivakumar.dev" target="_blank" color="inherit">Karthik Sivakumar</Link>
+            </Typography>
         </Box>
     );
 }
