@@ -1,25 +1,26 @@
 'use client'
 
 import Image from "next/image";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 
 interface BannerProps {
     image: string;
-    imageMobile: string;
     imageAlt?: string;
+    mobile?: boolean;
 }
 
 export default function Banner({
     image,
-    imageMobile,
     imageAlt = "banner-img",
+    mobile = false,
 }: BannerProps) {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
         <Box
             sx={{
+                display: mobile
+                    ? { xs: 'block', sm: 'none' }
+                    : { xs: 'none', sm: 'block' },
                 position: "relative",
                 width: "100%",
                 height: {
@@ -27,34 +28,19 @@ export default function Banner({
                 },
             }}
         >
-                <Image
-                    src={imageMobile}
-                    alt={imageAlt}
-                    width={400}
-                    height={400}
-                    loading="eager"
-                    style={{
-                        objectFit: "cover",
-                        position: "unset",
-                        width: "100%",
-                        height: "100%",
-                        display: isMobile ? 'block' : 'none'
-                    }}
-                />
-                <Image
-                    src={image}
-                    alt={imageAlt}
-                    width={1200}
-                    height={400}
-                    loading="eager"
-                    style={{
-                        objectFit: "cover",
-                        position: "unset",
-                        width: "100%",
-                        height: "100%",
-                        display: isMobile ? 'none' : 'block'
-                    }}
-                />
+            <Image
+                src={image}
+                alt={imageAlt}
+                width={1200}
+                height={400}
+                loading="eager"
+                style={{
+                    objectFit: "cover",
+                    position: "unset",
+                    width: "100%",
+                    height: "100%",
+                }}
+            />
         </Box>
     );
 }
