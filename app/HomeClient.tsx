@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import { Box, Typography } from "@mui/material";
 import TestimonialCard from "./components/TestimonialCard";
 import Banner from "./components/Banner";
-import { ProductCardInfo } from "@/public/data/productCategories";
-import { Box, Typography } from "@mui/material";
 import ProductCard from "./components/ProductCard";
-// import Image from "next/image";
+import Button3D from "./components/Button3D";
+// import BannerCarousel from "./components/BannerCarousel";
+import { ProductCardInfo } from "@/public/data/productCategories";
+import { listItemIcon } from "@/public/data/images";
 
 type Testimonial = {
     name: string;
@@ -34,6 +37,12 @@ export default function HomeClient({
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    const services = [
+        "Digital Patterns",
+        "Physical Patterns*",
+        "Custom Exclusive Patterns"
+    ];
 
     const settings = windowWidth >= 900 ? {
         infinite: true,
@@ -67,7 +76,11 @@ export default function HomeClient({
             padding={{ xs: '62px 0 0', md: '94px 0 0' }}
         >
             {/* Banner */}
-            <Banner image="/images/banner shadow test img.png" imageMobile="/images/banner shadow test img mobile.png" />
+            <Banner image="/images/banner shadow test img.png" />
+            <Banner image="/images/banner shadow test img mobile.png" mobile />
+
+            {/* Banner Carousel */}
+            {/* <BannerCarousel /> */}
 
             {/* Intro */}
             <Box
@@ -78,13 +91,28 @@ export default function HomeClient({
                 <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={'1.25rem'} marginTop={2} marginBottom={2}>The website is under development and certain links will not work</Typography>
             </Box>
 
+            <Box
+                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                maxWidth="1248px"
+            >
+                <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
+                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={'1.25rem'} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography>
+            </Box>
+
             {/* Services Teaser */}
-            {/* <Box
+            <Box
                 margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
                 display="flex"
                 justifyContent="space-between"
-                gap={4}
+                gap={{
+                    xs: 0,
+                    md: 4
+                }}
+                flexDirection={{
+                    xs: 'column',
+                    sm: 'row'
+                }}
             >
                 <Box
                     position="relative"
@@ -102,11 +130,23 @@ export default function HomeClient({
                     />
                 </Box>
 
-                <Box flex="1" padding={4}>
-                    <Typography variant="h2" fontFamily={'Source Sans Regular'}>Our Services</Typography>
-                    <Typography variant="subtitle1" fontFamily={'Source Sans Regular'}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
+                <Box flex="1" padding={{ xs: '32px 0', sm: 4 }} alignContent={'center'}>
+                    <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Our Services</Typography>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 16, md: 20 }} marginTop={2} marginBottom={2}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
+                    <Box className='list-container' display={'flex'} flexDirection={'column'} gap={2}>
+                        {services.map((title, index) => (
+                            <Box key={index} display={'flex'} gap={1} alignItems={'center'}>
+                                {listItemIcon}
+                                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 16, md: 20 }}>
+                                    {title}
+                                </Typography>
+                            </Box>
+                        ))}
+                    </Box>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} color={'gray'} fontSize={14} marginTop={2} marginBottom={2}>*Physical printed patterns exclusively on Shopee in the Philippines, Singapore, and Malaysia.</Typography>
+                    <Button3D href="/services" newTab={false}>View Services</Button3D>
                 </Box>
-            </Box> */}
+            </Box>
 
             {/* Featured Products */}
             <Box
@@ -114,16 +154,7 @@ export default function HomeClient({
                 margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
-                <Box
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    sx={{
-                        flexDirection: { xs: 'column', sm: 'row' },
-                        gap: { xs: 2, sm: 0 }
-                    }}
-                >
-                    <Typography variant='h2' fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Featured Products</Typography>
-                </Box>
+                <Typography variant='h2' fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Featured Products</Typography>
                 <Box
                     component="div"
                     sx={{
