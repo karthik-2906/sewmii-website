@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { getMensProducts } from "@/app/utils/getMensProducts";
-import HomeClient from "./HomeClient";
+import MenProductsPage from "./MenProductsClients";
 
-export default async function HomePage() {
+export default async function Page() {
     const { blocks, shirts, pants } = await getMensProducts();
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <HomeClient initialBlocks={blocks} initialShirts={shirts} initialPants={pants} />
+            <MenProductsPage initialBlocks={blocks} initialShirts={shirts} initialPants={pants} />
         </Suspense>
     );
 }

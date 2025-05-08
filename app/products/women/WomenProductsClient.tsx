@@ -15,7 +15,7 @@ type ProductData = {
     corsets: ProductCardInfo[];
 };
 
-export default function HomeClient({
+export default function WomenProductsPage({
     initialCorsets,
 }: {
     initialCorsets: ProductCardInfo[];

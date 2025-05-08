@@ -88,7 +88,7 @@ export default function HomeClient({
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Under Development</Typography>
-                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={'1.25rem'} marginTop={2} marginBottom={2}>The website is under development and certain links will not work</Typography>
+                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>The website is under development and certain links will not work</Typography>
             </Box>
 
             <Box
@@ -96,7 +96,7 @@ export default function HomeClient({
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
-                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={'1.25rem'} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography>
+                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography>
             </Box>
 
             {/* Services Teaser */}
@@ -132,12 +132,12 @@ export default function HomeClient({
 
                 <Box flex="1" padding={{ xs: '32px 0', sm: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Our Services</Typography>
-                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 16, md: 20 }} marginTop={2} marginBottom={2}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
                     <Box className='list-container' display={'flex'} flexDirection={'column'} gap={2}>
                         {services.map((title, index) => (
                             <Box key={index} display={'flex'} gap={1} alignItems={'center'}>
                                 {listItemIcon}
-                                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 16, md: 20 }}>
+                                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }}>
                                     {title}
                                 </Typography>
                             </Box>

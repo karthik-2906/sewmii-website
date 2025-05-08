@@ -17,7 +17,7 @@ type ProductData = {
     pants: ProductCardInfo[];
 };
 
-export default function HomeClient({
+export default function MenProductsPage({
     initialBlocks,
     initialShirts,
     initialPants,
