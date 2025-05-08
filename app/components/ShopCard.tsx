@@ -110,6 +110,7 @@ export default function ShopCard({
 
             <Link
                 href={link ?? "#"}
+                target="_blank"
                 sx={{
                     display: "block",
                     textDecoration: "none",
