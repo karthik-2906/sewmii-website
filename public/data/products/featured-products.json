@@ -1,80 +1,30 @@
 [
     {
-        "id": "women-corsets-01",
-        "title": "Women's Corset 1",
-        "desc": "A basic corset pattern for Women, available in multiple sizes.",
-        "shopeeLink": "#1",
-        "etsyLink": "https://www.etsy.com/shop/sewmii",
-        "carouselImages": [
-            {
-                "src": "/images/sewmii-temp-pattern-5.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern-6.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern-7.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern-2.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern-3.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-temp-pattern-4.jpg",
-                "alt": "temp-alt"
-            }
-        ]
-    },
-    {
-        "id": "men-basic-block-01",
-        "title": "Men's Basic T-Shirt Block",
-        "desc": "A basic t-shirt block pattern for men, available in multiple sizes.",
-        "shopeeLink": "#",
+        "id": "athena-corset",
+        "title": "Athena Corset",
+        "desc": "A scooped neckline corset sewing pattern featuring a flattering silhouette and separate bust pad. This pattern is perfect for intermediate sewists looking to create a structured yet elegant piece.",
         "etsyLink": "#",
+        "shopeeLink": "https://shopee.ph/Sewing-Pattern-Basic-Corset-and-Bustier-Variations-2-Pattern-for-Sewing-i.423527163.29231621360",
         "carouselImages": [
             {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-flat-drawing.jpg",
+                "alt": "Athena Corset Flat Drawing"
             },
             {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-body-img.jpg",
+                "alt": "Athena Corset Body Image"
             },
             {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
-            }
-        ]
-    },
-    {
-        "id": "men-shirts-02",
-        "title": "Men's Shirts 2",
-        "desc": "A basic shirt pattern for men, designed for comfort and style.",
-        "shopeeLink": "#",
-        "etsyLink": "#",
-        "carouselImages": [
-            {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-mannequin-front.png",
+                "alt": "Athena Corset Mannequin Front Image"
             },
             {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-mannequin-back.png",
+                "alt": "Athena Corset Mannequin Back Image"
             },
             {
-                "src": "/images/sewmii-temp-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-pattern-img.jpg",
+                "alt": "Athena Corset Pattern Image"
             }
         ]
     }
