@@ -275,7 +275,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     </Box>
                 ))}
                 <Image
-                    src="/images/sewmii-pattern.jpg"
+                    src="/images/products/women/corsets/athena/athena-pattern-img.jpg"
                     alt='Sewmii Logo'
                     height={400}
                     width={400}

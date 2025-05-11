@@ -123,8 +123,8 @@ export default function HomeClient({
                     }}
                 >
                     <Image
-                        src="/images/teaser-img.jpg"
-                        alt="services-teaser-image"
+                        src="/images/products/women/corsets/athena/athena-flat-drawing.jpg"
+                        alt="Services Image Teaser"
                         fill
                         style={{ objectFit: 'cover', borderRadius: 16 }}
                     />
