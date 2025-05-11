@@ -184,6 +184,14 @@ button {
   background: url(../public/icons/arrow-right.svg) 50% !important;
 }
 
+.product-card .slick-dots {
+  bottom: -12px;
+}
+
+.product-card .slider-container {
+  margin-bottom: 12px;
+}
+
 .product-card .slick-prev {
   left: 0 !important;
 }

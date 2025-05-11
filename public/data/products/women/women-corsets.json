@@ -1,64 +1,30 @@
 [
     {
-        "id": "women-corsets-01",
-        "title": "Women's Corset 1",
-        "desc": "A basic corset pattern for Women, available in multiple sizes.",
-        "shopeeLink": "#1",
-        "etsyLink": "https://www.etsy.com/shop/sewmii",
+        "id": "athena-corset",
+        "title": "Athena Corset",
+        "desc": "A scooped neckline corset sewing pattern featuring a flattering silhouette and separate bust pad. This pattern is perfect for intermediate sewists looking to create a structured yet elegant piece.",
+        "etsyLink": "#",
+        "shopeeLink": "https://shopee.ph/Sewing-Pattern-Basic-Corset-and-Bustier-Variations-2-Pattern-for-Sewing-i.423527163.29231621360",
         "carouselImages": [
             {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-flat-drawing.jpg",
+                "alt": "Athena Corset Flat Drawing"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-body-img.jpg",
+                "alt": "Athena Corset Body Image"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
-            }
-        ]
-    },
-    {
-        "id": "women-corsets-02",
-        "title": "Women's Corset 2",
-        "desc": "A basic corset pattern for Women, available in multiple sizes.",
-        "shopeeLink": "",
-        "etsyLink": "",
-        "carouselImages": [
-            {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-mannequin-front.png",
+                "alt": "Athena Corset Mannequin Front Image"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-mannequin-back.png",
+                "alt": "Athena Corset Mannequin Back Image"
             },
             {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
-            }
-        ]
-    },
-    {
-        "id": "women-corsets-03",
-        "title": "Women's Corset 3",
-        "desc": "A basic corset pattern for Women, available in multiple sizes.",
-        "shopeeLink": "",
-        "etsyLink": "https://www.etsy.com/shop/sewmii",
-        "carouselImages": [
-            {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
-            },
-            {
-                "src": "/images/sewmii-pattern.jpg",
-                "alt": "temp-alt"
+                "src": "/images/products/women/corsets/athena/athena-pattern-img.jpg",
+                "alt": "Athena Corset Pattern Image"
             }
         ]
     }
