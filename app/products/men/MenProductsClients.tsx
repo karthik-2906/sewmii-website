@@ -71,7 +71,8 @@ export default function MenProductsPage({
                                 <ProductCard 
                                     key={product.id} 
                                     title={product.title} 
-                                    desc={product.desc} 
+                                    desc={product.desc}
+                                    tutorialLink={product.tutorialLink}
                                     shopeeLink={product.shopeeLink}
                                     etsyLink={product.etsyLink}
                                     carouselImages={product.carouselImages} 
