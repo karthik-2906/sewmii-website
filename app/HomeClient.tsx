@@ -13,6 +13,7 @@ import Button3D from "./components/Button3D";
 // import BannerCarousel from "./components/BannerCarousel";
 import { ProductCardInfo } from "@/public/data/productCategories";
 import { listItemIcon } from "@/public/data/images";
+import Link from "next/link";
 
 type Testimonial = {
     name: string;
@@ -81,6 +82,54 @@ export default function HomeClient({
 
             {/* Banner Carousel */}
             {/* <BannerCarousel /> */}
+
+            {/* Etsy Launch Promo */}
+            <Box
+                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                maxWidth="1248px"
+                display="flex"
+                justifyContent="space-between"
+                gap={{
+                    xs: 0,
+                    md: 4
+                }}
+                flexDirection={{
+                    xs: 'column-reverse',
+                    md: 'row'
+                }}
+            >
+
+                <Box flex="1" padding={{ xs: '32px 0', sm: 4 }} alignContent={'center'}>
+                    <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>New Launch: Athena Corset Pattern ✨</Typography>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Celebrate the opening of our Etsy shop with our very first digital sewing pattern — the Athena Corset! For a limited time, enjoy 20% off until the end of the month. Don’t miss your chance to grab this elegant, structured corset pattern at a special launch price!</Typography>
+                    <Button3D href="https://www.etsy.com/shop/sewmii" newTab={false}>View Shop</Button3D>
+                </Box>
+
+                <Link href={'https://www.etsy.com/shop/sewmii'} target="_blank" style={{ flex: '1' }}>
+                    <Box
+                        position="relative"
+                        flex="1"
+                        width="100%"
+                        border={'3px solid var(--color-secondary)'}
+                        borderRadius={4}
+                        sx={{
+                            aspectRatio: 1,
+                            transition: 'transform 0.5s ease',
+                            '&:hover': {
+                                transform: 'scale(1.03)',
+                            },
+                        }}
+                    >
+                        <Image
+                            src="/images/Etsy teaser.png"
+                            alt="Etsy Launch Teaser"
+                            fill
+                            style={{ objectFit: 'cover', borderRadius: 16 }}
+                        />
+                    </Box>
+                </Link>
+
+            </Box>
 
             {/* Intro */}
             <Box
