@@ -87,6 +87,7 @@ export default function WomenProductsPage({
                                         key={product.id}
                                         title={product.title}
                                         desc={product.desc}
+                                        tutorialLink={product.tutorialLink}
                                         shopeeLink={product.shopeeLink}
                                         etsyLink={product.etsyLink}
                                         carouselImages={product.carouselImages}

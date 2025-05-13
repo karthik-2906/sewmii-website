@@ -46,6 +46,7 @@ export type ProductCardInfo = {
     id: string;
     title: string;
     desc: string;
+    tutorialLink: string;
     shopeeLink: string;
     etsyLink: string;
     carouselImages: CarouselImage[];
