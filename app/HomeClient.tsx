@@ -87,14 +87,6 @@ export default function HomeClient({
                 margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
-                <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Under Development</Typography>
-                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>The website is under development and certain links will not work</Typography>
-            </Box>
-
-            <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
-                maxWidth="1248px"
-            >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
                 <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography>
             </Box>
