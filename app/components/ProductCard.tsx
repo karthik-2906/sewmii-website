@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { etsyIcon, shopeeColorIcon } from '@/public/data/images';
 import Button3D from './Button3D';
+import Link from 'next/link';
 
 interface CarouselImage {
     src: string;
@@ -20,11 +21,12 @@ interface ProductCardProps {
     title: string;
     desc: string;
     shopeeLink: string;
+    tutorialLink: string;
     etsyLink: string;
     carouselImages: CarouselImage[];
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsyLink, carouselImages = [] }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ title, desc, tutorialLink, shopeeLink, etsyLink, carouselImages = [] }) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -59,6 +61,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, shopeeLink, etsy
                 <Typography variant="body1" sx={{ color: 'var(--color-primary)', fontFamily: 'Source Sans Regular' }}>
                     {desc}
                 </Typography>
+                <Link href={tutorialLink} target='_blank' style={{ display: 'inline-flex', gap: 4, marginTop: 16, border: '2px solid var(--color-secondary)', padding: '6px 12px', borderRadius: 4 }}>
+                    <Image
+                        src="/icons/youtube-color.svg"
+                        alt="youtube-icon"
+                        height={24}
+                        width={24}
+                        style={{ display: 'block' }}
+                    />
+                    <Typography variant="body1" sx={{ color: 'var(--color-primary)', fontFamily: 'Source Sans Regular' }}>
+                        Tutorial
+                    </Typography>
+                </Link>
             </CardContent>
             <CardActions sx={{
                 padding: '16px 24px 24px',

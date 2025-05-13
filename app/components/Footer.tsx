@@ -23,6 +23,9 @@ export default function Footer() {
             borderTop='2px solid var(--color-secondary)'
             display="flex"
             flexDirection="column"
+            sx={{
+                background: 'var(--page-background)'
+            }}
         >
 
             {/* Social Icons */}
