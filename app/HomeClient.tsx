@@ -56,6 +56,7 @@ export default function HomeClient({
         autoplaySpeed: 4000,
         speed: 500
     } : windowWidth >= 600 ? {
+        arrows: false,
         dots: true,
         infinite: true,
         speed: 500,
@@ -63,6 +64,7 @@ export default function HomeClient({
         slidesToScroll: 2,
         touchThreshold: 30,
     } : {
+        arrows: false,
         dots: true,
         infinite: true,
         speed: 500,
@@ -74,18 +76,18 @@ export default function HomeClient({
         <Box
             component="div"
             className="main-container"
-            padding={{ xs: '62px 0 0', md: '94px 0 0' }}
+            padding={{ xs: '70px 0 0', md: '94px 0 0' }}
         >
             {/* Banner */}
-            <Banner image="/images/banner shadow test img.png" />
-            <Banner image="/images/banner shadow test img mobile.png" mobile />
+            <Banner image="/images/banner shadow test img.png" imageAlt="sewmii patterns" />
+            <Banner image="/images/banner shadow test img mobile.png" imageAlt="sewmii patterns" mobile />
 
             {/* Banner Carousel */}
             {/* <BannerCarousel /> */}
 
             {/* Etsy Launch Promo */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
                 display="flex"
                 justifyContent="space-between"
@@ -99,7 +101,7 @@ export default function HomeClient({
                 }}
             >
 
-                <Box flex="1" padding={{ xs: '32px 0', sm: 4 }} alignContent={'center'}>
+                <Box flex="1" padding={{ xs: '24px 0 8px', md: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>New Launch: Athena Corset Pattern ✨</Typography>
                     <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Celebrate the opening of our Etsy shop with our very first digital sewing pattern — the Athena Corset! For a limited time, enjoy 20% off until the end of the month. Don’t miss your chance to grab this elegant, structured corset pattern at a special launch price!</Typography>
                     <Button3D href="https://www.etsy.com/shop/sewmii" newTab={false}>View Shop</Button3D>
@@ -122,7 +124,7 @@ export default function HomeClient({
                     >
                         <Image
                             src="/images/Etsy teaser.png"
-                            alt="Etsy Launch Teaser"
+                            alt="Etsy store screenshot"
                             fill
                             style={{ objectFit: 'cover', borderRadius: 16 }}
                         />
@@ -133,7 +135,7 @@ export default function HomeClient({
 
             {/* Intro */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
@@ -142,7 +144,7 @@ export default function HomeClient({
 
             {/* Services Teaser */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
                 display="flex"
                 justifyContent="space-between"
@@ -152,7 +154,7 @@ export default function HomeClient({
                 }}
                 flexDirection={{
                     xs: 'column',
-                    sm: 'row'
+                    md: 'row'
                 }}
             >
                 <Box
@@ -165,15 +167,15 @@ export default function HomeClient({
                 >
                     <Image
                         src="/images/products/women/corsets/athena/athena-flat-drawing.jpg"
-                        alt="Services Image Teaser"
+                        alt="Athena corset flat drawing"
                         fill
                         style={{ objectFit: 'cover', borderRadius: 16 }}
                     />
                 </Box>
 
-                <Box flex="1" padding={{ xs: '32px 0', sm: 4 }} alignContent={'center'}>
+                <Box flex="1" padding={{ xs: '24px 0 8px', md: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Our Services</Typography>
-                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2} lineHeight={'unset'}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
                     <Box className='list-container' display={'flex'} flexDirection={'column'} gap={2}>
                         {services.map((title, index) => (
                             <Box key={index} display={'flex'} gap={1} alignItems={'center'}>
@@ -192,7 +194,7 @@ export default function HomeClient({
             {/* Featured Products */}
             <Box
                 className='featured-products-container'
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant='h2' fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Featured Products</Typography>
@@ -225,8 +227,8 @@ export default function HomeClient({
                     className='testimonial-cards-container'
                     paddingBottom={'25px'}
                     margin={{
-                        xs: '32px 0 0',
-                        sm: '48px 0 0 16px',
+                        xs: '40px 0 0',
+                        sm: '48px 0 0 20px',
                         lg: '64px auto 0 auto'
                     }}
                     maxWidth={'1264px'}

@@ -24,13 +24,13 @@ export default function CalculatorPage() {
         <Box
             component="div"
             className="main-container"
-            padding={{ xs: '62px 0 0', md: '94px 0 0' }}
+            padding={{ xs: '70px 0 0', md: '94px 0 0' }}
         >
 
             {/* Calculator */}
             <Box
                 className='calculator-container'
-                margin={{ xs: '32px 0 0', md: '48px 0 0', lg: '48px auto 0' }}
+                margin={{ xs: '40px 0 0', md: '48px 0 0', lg: '48px auto 0' }}
                 maxWidth="1248px"
             >
                 <TabContext value={value}>
@@ -42,7 +42,6 @@ export default function CalculatorPage() {
                         allowScrollButtonsMobile
                         sx={{
                             width: '100%',
-                            padding: { padding: 0, md: '0', sm: '0 16px' },
                             [`& .${tabsClasses.scrollButtons}`]: {
                                 '&.Mui-disabled': { opacity: 0.3 },
                                 display: { display: "flex", sm: "none" },
