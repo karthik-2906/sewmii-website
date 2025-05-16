@@ -8,12 +8,12 @@
         "shopeeLink": "https://shopee.ph/Sewing-Pattern-Basic-Corset-and-Bustier-Variations-2-Pattern-for-Sewing-i.423527163.29231621360",
         "carouselImages": [
             {
-                "src": "/images/products/women/corsets/athena/athena-flat-drawing.jpg",
-                "alt": "Athena Corset Flat Drawing"
-            },
-            {
                 "src": "/images/products/women/corsets/athena/athena-body-img.jpg",
                 "alt": "Athena Corset Body Image"
+            },
+            {
+                "src": "/images/products/women/corsets/athena/athena-flat-drawing.jpg",
+                "alt": "Athena Corset Flat Drawing"
             },
             {
                 "src": "/images/products/women/corsets/athena/athena-mannequin-front.png",

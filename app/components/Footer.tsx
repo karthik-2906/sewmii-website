@@ -19,7 +19,7 @@ export default function Footer() {
         <Box
             component="footer"
             className="footer"
-            marginTop={{ xs: '32px', md: '48px', lg: '64px' }}
+            marginTop={{ xs: 5, lg: 8 }}
             borderTop='2px solid var(--color-secondary)'
             display="flex"
             flexDirection="column"
@@ -31,7 +31,7 @@ export default function Footer() {
             {/* Social Icons */}
             <Box
                 display="flex"
-                padding='32px 16px 16px'
+                padding='32px 20px 16px'
                 gap={3}
                 justifyContent="center"
             >
@@ -83,7 +83,7 @@ export default function Footer() {
             {/* Navigation Links & Copyright */}
             <Box
                 display="flex"
-                padding="8px 16px"
+                padding="8px 20px"
                 gap={1}
                 flexDirection="column"
                 justifyContent="center"
@@ -137,12 +137,12 @@ export default function Footer() {
 
             {/* Logo */}
             <Box display="flex" justifyContent="center"
-                padding='16px 16px 32px'
+                padding='16px 20px 32px'
             >
                 <Link href="/">
                     <Image
                         src="/logos/sewmii-logo-square.png"
-                        alt="sewmii logo"
+                        alt="Sewmii logo"
                         height={96}
                         width={96}
                         style={{ display: 'block', height: '96px', width: 'auto' }}

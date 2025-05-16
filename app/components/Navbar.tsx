@@ -220,7 +220,7 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             sx={{
                 display: { xs: 'none', md: 'block' },
                 position: 'fixed',
-                top: isOpen ? '94px' : '-86%',
+                top: isOpen ? '94px' : '-371px',
                 transition: '500ms',
                 left: '50%',
                 transform: 'translateX(-50%)',
@@ -332,7 +332,6 @@ export default function Navbar() {
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({
         Products: false,
-        Men: false,
         Women: false,
     });
 
@@ -470,7 +469,7 @@ export default function Navbar() {
                 <Box
                     display={{ xs: 'flex', md: 'none' }}
                     justifyContent={'space-between'}
-                    p={2}
+                    p={2.5}
                     alignItems={'center'}
                     className='header-mobile'
                 >
@@ -498,7 +497,7 @@ export default function Navbar() {
                             src="/logos/sewmii-logo-text.png"
                             alt='Sewmii Logo'
                             height={24}
-                            width={631}
+                            width={108}
                             style={{ height: '24px', width: 'auto' }}
                             priority
                         />

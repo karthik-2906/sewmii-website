@@ -38,13 +38,13 @@ export default function WomenProductsPage({
         <Box
             component="div"
             className="main-container"
-            padding={{ xs: '62px 0 0', md: '94px 0 0' }}
+            padding={{ xs: '70px 0 0', md: '94px 0 0' }}
         >
 
             {/* Womens Products */}
             <Box
                 className='womens-products-container'
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '48px auto 0' }}
+                margin={{ xs: '32px 24px 0', md: '48px 24px 0', lg: '48px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant="h5" component="h2" fontFamily={"Source Sans Bold"} fontSize={"2rem"}>
@@ -52,7 +52,10 @@ export default function WomenProductsPage({
                 </Typography>
                 <TabContext value={value}>
                     <Tabs value={value} onChange={handleChange} sx={{
-                        marginTop: '24px',
+                        marginTop: {
+                            xs: 3,
+                            md: 4
+                        },
                         '& .MuiTabs-flexContainer': {
                             gap: { gap: '8px', md: '16px' },
                         }
@@ -79,7 +82,10 @@ export default function WomenProductsPage({
                                         md: 'repeat(3, 1fr)',
                                     },
                                     gap: '24px',
-                                    marginTop: 4
+                                    marginTop: {
+                                        xs: 3,
+                                        md: 4
+                                    }
                                 }}
                             >
                                 {productData[category.value as keyof ProductData]?.map((product) => (
