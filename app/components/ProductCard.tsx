@@ -55,16 +55,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, desc, tutorialLink, sh
                 </Slider>
             </Box> : ''}
             <CardContent sx={{ padding: '16px 24px' }}>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'Source Sans Bold' }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'Source Sans Bold' }} fontSize={28}>
                     {title}
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'var(--color-primary)', fontFamily: 'Source Sans Regular' }}>
+                <Typography variant="body1" sx={{ color: 'var(--color-primary)', fontFamily: 'Source Sans Regular' }} fontSize={18}>
                     {desc}
                 </Typography>
-                <Link href={tutorialLink} target='_blank' style={{ display: 'inline-flex', gap: 4, marginTop: 16, border: '2px solid var(--color-secondary)', padding: '6px 12px', borderRadius: 4 }}>
+                <Link href={tutorialLink} target='_blank' style={{ display: 'inline-flex', gap: 8, marginTop: 16, border: '2px solid var(--color-secondary)', padding: '6px 12px', borderRadius: 4 }}>
                     <Image
                         src="/icons/youtube-color.svg"
-                        alt="youtube-icon"
+                        alt="YouTube"
                         height={24}
                         width={24}
                         style={{ display: 'block' }}

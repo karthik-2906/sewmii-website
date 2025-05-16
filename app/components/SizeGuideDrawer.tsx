@@ -86,12 +86,13 @@ const SizeGuideDrawer = () => {
                 open={open}
                 onClose={toggleDrawer(false)}
                 transitionDuration={500}
+                keepMounted
                 PaperProps={{
                     sx: {
                         background: 'var(--page-background)',
                         width: 'auto',
                         maxWidth: '100vw',
-                        padding: 2,
+                        padding: 2.5,
                         borderTopLeftRadius: isMobile? 0 : 12,
                         borderBottomLeftRadius: 12,
                         borderBottomRightRadius: isMobile? 12 : 0
@@ -128,7 +129,7 @@ const SizeGuideDrawer = () => {
                         <TabPanel value="1" keepMounted={true} sx={{ padding: 0, margin: { margin: '0', md: '0 auto' } }}>
                             <Image
                                 src='/images/sewmii-size-guide-in.jpg'
-                                alt='size-guide-inches'
+                                alt='Size guide in inches'
                                 width={420}
                                 height={420}
                                 loading='eager'
@@ -143,7 +144,7 @@ const SizeGuideDrawer = () => {
                         <TabPanel value="2" keepMounted={true} sx={{ padding: 0, margin: { margin: '0', md: '0 auto' } }}>
                             <Image
                                 src='/images/sewmii-size-guide-cm.jpg'
-                                alt='size-guide-cm'
+                                alt='Size Guide in centimeters'
                                 width={420}
                                 height={420}
                                 loading='eager'

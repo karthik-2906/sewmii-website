@@ -30,7 +30,7 @@ export default function ServicesPage() {
         <Box
             component="div"
             className="main-container"
-            padding={{ xs: '62px 0 0', md: '94px 0 0' }}
+            padding={{ xs: '70px 0 0', md: '94px 0 0' }}
         >
             {/* Banner */}
             <Banner image="/images/banner shadow test img.png" />
@@ -38,7 +38,7 @@ export default function ServicesPage() {
 
             {/* Services Intro */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
@@ -49,7 +49,7 @@ export default function ServicesPage() {
 
             {/* Shop links */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'} mb={2}>Buy Sewing Patterns</Typography>
@@ -87,7 +87,7 @@ export default function ServicesPage() {
             {/* Custom Pattern Description */}
             <Box
                 className='custom-pattern-container'
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Custom Patterns</Typography>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
 
             {/* Contact cards */}
             <Box
-                margin={{ xs: '32px 16px 0', md: '48px 16px 0', lg: '64px auto 0' }}
+                margin={{ xs: '40px 20px 0', md: '48px 20px 0', lg: '64px auto 0' }}
                 maxWidth="1248px"
                 sx={{ scrollMarginTop: { xs: '20px', md: '120px' } }}
             >
