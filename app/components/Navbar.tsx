@@ -91,7 +91,7 @@ const DrawerContent = ({
                 style={{ height: '24px', width: '24px', cursor: 'pointer' }}
             />
         </Box>
-        <List sx={{ width: '100%', py: 0, fontSize: '24px' }} component="nav">
+        <List sx={{ width: '100%', py: 0, fontSize: 20, textTransform: 'uppercase' }} component="nav">
             <ListItemButton sx={{
                 "&:hover": { backgroundColor: "transparent" },
                 "&:active": { backgroundColor: "transparent" }
@@ -234,8 +234,6 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         >
             <Box
                 sx={{
-                    // display: 'grid',
-                    // gridTemplateColumns: 'repeat(3, 1fr)',
                     display: 'flex',
                     justifyContent: 'space-evenly',
                     gap: '24px',
@@ -244,8 +242,8 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 }}
             >
                 {productCategories.map((category) => (
-                    <Box key={category.name}>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                    <Box key={category.name} textTransform={'uppercase'}>
+                        <Typography variant="h6" fontFamily={'Source Sans Bold'} fontSize={16}>
                             <Link
                                 href={category.link}
                                 underline='none'
@@ -260,7 +258,8 @@ const ProductsDropdown = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                                     <Link
                                         href={`${product.link}?tab=${product.query}`}
                                         underline="none"
-                                        color="#909090"
+                                        color="#83817b"
+                                        fontFamily={'Source Sans Bold'}
                                         sx={{
                                             display: 'block',
                                             transition: '0.3s ease-in-out',
@@ -421,7 +420,7 @@ export default function Navbar() {
                             priority
                         />
                     </Link>
-                    <Box display={'flex'} gap={0} alignItems={'center'}>
+                    <Box display={'flex'} gap={0} alignItems={'center'} fontFamily={'Source Sans Bold'} textTransform={'uppercase'}>
                         <NavLink href="/" text="Home" />
 
                         <Button
@@ -441,8 +440,7 @@ export default function Navbar() {
                             <Typography
                                 variant="h6"
                                 fontSize="16px"
-                                fontFamily="Source Sans Regular"
-                                textTransform="none"
+                                fontFamily="Source Sans Bold"
                                 color="var(--color-primary)"
                             >
                                 Products
@@ -481,6 +479,7 @@ export default function Navbar() {
 
                     <Drawer
                         anchor="left"
+                        transitionDuration={500}
                         open={isDrawerOpen}
                         onClose={toggleDrawer(false)}
                         PaperProps={drawerPaperProps}
