@@ -92,16 +92,16 @@ export default function HomeClient({
                 display="flex"
                 justifyContent="space-between"
                 gap={{
-                    xs: 0,
+                    xs: 3,
                     md: 4
                 }}
                 flexDirection={{
-                    xs: 'column-reverse',
+                    xs: 'column',
                     md: 'row'
                 }}
             >
 
-                <Box flex="1" padding={{ xs: '24px 0 8px', md: 4 }} alignContent={'center'}>
+                <Box flex="1" padding={{ xs: 0, md: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>New Launch: Athena Corset Pattern ✨</Typography>
                     <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Celebrate the opening of our Etsy shop with our very first digital sewing pattern — the Athena Corset! For a limited time, enjoy 20% off until the end of the month. Don’t miss your chance to grab this elegant, structured corset pattern at a special launch price!</Typography>
                     <Button3D href="https://www.etsy.com/shop/sewmii" newTab={false}>View Shop</Button3D>
@@ -139,7 +139,9 @@ export default function HomeClient({
                 maxWidth="1248px"
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
-                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography>
+                {/* <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography> */}
+                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Sewmii Pattern Studio – Love sewing but not patternmaking? Our beginner-friendly digital and printed sewing patterns make it easy to create beautiful clothing at home or for your garment business. Designed by a Filipino pattern maker, each pattern is ready to sew, easy to follow, and perfect for DIY fashion.</Typography>
+
             </Box>
 
             {/* Services Teaser */}
@@ -149,11 +151,11 @@ export default function HomeClient({
                 display="flex"
                 justifyContent="space-between"
                 gap={{
-                    xs: 0,
+                    xs: 3,
                     md: 4
                 }}
                 flexDirection={{
-                    xs: 'column',
+                    xs: 'column-reverse',
                     md: 'row'
                 }}
             >
@@ -173,7 +175,7 @@ export default function HomeClient({
                     />
                 </Box>
 
-                <Box flex="1" padding={{ xs: '24px 0 8px', md: 4 }} alignContent={'center'}>
+                <Box flex="1" padding={{ xs: 0, md: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Our Services</Typography>
                     <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2} lineHeight={'unset'}>We offer a wide array of services to help bring your creative ideas to life.</Typography>
                     <Box className='list-container' display={'flex'} flexDirection={'column'} gap={2}>
