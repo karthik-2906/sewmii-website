@@ -140,7 +140,7 @@ export default function HomeClient({
             >
                 <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>Sewmii Pattern Studio</Typography>
                 {/* <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.</Typography> */}
-                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Sewmii Pattern Studio – Love sewing but not patternmaking? Our beginner-friendly digital and printed sewing patterns make it easy to create beautiful clothing at home or for your garment business. Designed by a Filipino pattern maker, each pattern is ready to sew, easy to follow, and perfect for DIY fashion.</Typography>
+                <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Sewmii Pattern Studio – Love sewing but not patternmaking? Our beginner-friendly digital and printed sewing patterns make it easy to create beautiful clothing at home or for your garment business. Designed by a pattern maker from the philippines, each pattern is ready to sew, easy to follow, and perfect for DIY fashion.</Typography>
 
             </Box>
 

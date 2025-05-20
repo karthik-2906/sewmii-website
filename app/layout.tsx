@@ -8,7 +8,7 @@ import SizeGuideDrawer from "./components/SizeGuideDrawer";
 
 // const desc = "Sewmii Pattern Studio - Love sewing but not patternmaking? Our patterns make it easy to create beautiful clothes at home or for your garment business. Shop printed sewing patterns from a pattern maker in the Philippines. Easy, beginner-friendly, and ready to sew.";
 
-const desc = "Sewmii Pattern Studio – Love sewing but not patternmaking? Our beginner-friendly digital and printed sewing patterns make it easy to create beautiful clothing at home or for your garment business. Designed by a Filipino pattern maker, each pattern is ready to sew, easy to follow, and perfect for DIY fashion."
+const desc = "Sewmii Pattern Studio – Love sewing but not patternmaking? Our beginner-friendly digital and printed sewing patterns make it easy to create beautiful clothing at home or for your garment business. Designed by a pattern maker from the philippines, each pattern is ready to sew, easy to follow, and perfect for DIY fashion."
 
 export const metadata: Metadata = {
     title: "Digital Sewing Patterns for Beginners & Small Brands | sewmii",
