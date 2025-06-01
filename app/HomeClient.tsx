@@ -103,7 +103,7 @@ export default function HomeClient({
 
                 <Box flex="1" padding={{ xs: 0, md: 4 }} alignContent={'center'}>
                     <Typography variant="h2" fontFamily={'Source Sans Bold'} fontSize={'2rem'}>New Launch: Athena Corset Pattern ✨</Typography>
-                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Celebrate the opening of our Etsy shop with our very first digital sewing pattern — the Athena Corset! For a limited time, enjoy 20% off until the end of the month. Don’t miss your chance to grab this elegant, structured corset pattern at a special launch price!</Typography>
+                    <Typography variant='subtitle1' fontFamily={'Source Sans Regular'} fontSize={{ xs: 18, md: 20 }} marginTop={2} marginBottom={2}>Celebrate the opening of our Etsy shop with our very first digital sewing pattern — the Athena Corset! This stylish and structured corset is perfect for anyone who loves to sew and wants to add a timeless piece to their wardrobe. Designed for intermediate sewists, it’s a fun and rewarding project for those ready to take their skills to the next level.</Typography>
                     <Button3D href="https://www.etsy.com/shop/sewmii" newTab={false}>View Shop</Button3D>
                 </Box>
 
